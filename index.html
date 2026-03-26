@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kasun Liyanage | A/L Chemistry — University of Colombo | Premier Chemistry Educator</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS Animation Library for smooth scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #0a1927;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Theme colors: black, navy blue, white, light blue */
+    :root {
+      --bg-white: #ffffff;
+      --navy-dark: #0a1a2f;
+      --navy-mid: #0f2a3e;
+      --black-soft: #111827;
+      --light-blue: #eef5ff;
+      --accent-blue: #2c7da0;
+      --accent-gold: #e9b35f;
+      --text-dark: #1e293b;
+      --text-muted: #4a5b6e;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Background photo with fade */
+    .bg-photo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .bg-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.1;
+      filter: brightness(0.98) contrast(1.02);
+    }
+    .bg-photo::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.88) 100%);
+      pointer-events: none;
+    }
+
+    /* Animated chemical formulas */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .chem-float {
+      position: absolute;
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 1rem;
+      white-space: nowrap;
+      color: rgba(44, 125, 160, 0.2);
+      animation: floatSlow 20s infinite linear;
+      user-select: none;
+    }
+    @keyframes floatSlow {
+      0% { transform: translateY(100vh) translateX(-10px) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.5; }
+      85% { opacity: 0.5; }
+      100% { transform: translateY(-20vh) translateX(20px) rotate(8deg); opacity: 0; }
+    }
+    .chem-float:nth-child(1) { left: 5%; animation-duration: 24s; font-size: 1.2rem; }
+    .chem-float:nth-child(2) { left: 18%; animation-duration: 32s; font-size: 1rem; animation-delay: -3s; }
+    .chem-float:nth-child(3) { left: 42%; animation-duration: 28s; font-size: 1.4rem; animation-delay: -7s; }
+    .chem-float:nth-child(4) { left: 68%; animation-duration: 36s; font-size: 1rem; animation-delay: -11s; }
+    .chem-float:nth-child(5) { left: 82%; animation-duration: 26s; font-size: 1.1rem; animation-delay: -2s; }
+    .chem-float:nth-child(6) { left: 12%; animation-duration: 40s; font-size: 0.9rem; animation-delay: -15s; }
+    .chem-float:nth-child(7) { left: 55%; animation-duration: 30s; font-size: 1.3rem; animation-delay: -5s; }
+    .chem-float:nth-child(8) { left: 75%; animation-duration: 34s; font-size: 1rem; animation-delay: -9s; }
+    .chem-float:nth-child(9) { left: 90%; animation-duration: 28s; font-size: 1rem; animation-delay: -12s; }
+    .chem-float:nth-child(10) { left: 33%; animation-duration: 44s; font-size: 1.2rem; animation-delay: -18s; }
+
+    /* Glassy navigation with rounded corners + vertical shrink on scroll */
+    .navbar {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1320px;
+      background: rgba(10, 26, 47, 0.65);
+      backdrop-filter: blur(18px);
+      border-radius: 80px;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    }
+    /* Shrunk navbar - more vertical (smaller padding) */
+    .navbar.scrolled {
+      top: 12px;
+      padding: 0.55rem 2rem;
+      background: rgba(10, 26, 47, 0.85);
+      backdrop-filter: blur(20px);
+      border-radius: 60px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    }
+    .nav-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.45rem;
+      letter-spacing: -0.3px;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+    .navbar.scrolled .logo {
+      font-size: 1.2rem;
+    }
+    .logo span {
+      color: var(--accent-gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-gold);
+      border-bottom-color: var(--accent-gold);
+      transform: translateY(-1px);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Hero section with photo */
+    .hero {
+      padding: 7rem 0 4rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      flex: 1.1;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .hero-badge {
+      background: rgba(10, 26, 47, 0.8);
+      backdrop-filter: blur(4px);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.45rem 1.4rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+    }
+    .hero-content h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--navy-dark);
+    }
+    .hero-content .highlight {
+      color: var(--accent-blue);
+      position: relative;
+      display: inline-block;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin: 1rem 0 1.8rem;
+      max-width: 560px;
+    }
+    .hero-image {
+      flex: 0.9;
+      text-align: center;
+      animation: fadeInScale 0.8s ease-out;
+    }
+    .hero-image img {
+      max-width: 100%;
+      width: 340px;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 35% 65% 38% 62% / 58% 42% 58% 42%;
+      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.25);
+      border: 5px solid rgba(255,255,245,0.95);
+      transition: transform 0.5s ease;
+    }
+    .hero-image img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Stats counter box - more vertical layout */
+    .stats-counter-box {
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-radius: 48px;
+      padding: 2rem 2rem;
+      margin: 2rem 0 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(10, 26, 47, 0.1);
+      transition: all 0.4s;
+    }
+    .counter-item {
+      text-align: center;
+      padding: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .counter-item:hover {
+      transform: translateY(-5px);
+    }
+    .counter-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .counter-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .counter-icon {
+      font-size: 2rem;
+      color: var(--accent-blue);
+      margin-bottom: 0.6rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy-dark);
+      color: white;
+      padding: 0.85rem 2.2rem;
+      border-radius: 48px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--accent-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -10px rgba(10, 26, 47, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--navy-dark);
+      color: var(--navy-dark);
+    }
+    .btn-outline:hover {
+      background: var(--navy-dark);
+      color: white;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--navy-dark);
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: var(--accent-gold);
+      border-radius: 3px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    /* Cards with glassmorphism */
+    .about-card, .contact-section {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-radius: 44px;
+      padding: 2.2rem 2.4rem;
+      box-shadow: var(--shadow-sm);
+      margin: 2rem 0 3rem;
+      border: 1px solid rgba(10, 26, 47, 0.08);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .about-card:hover, .contact-section:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .about-grid {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 2;
+    }
+    .about-highlights {
+      flex: 1;
+      background: var(--light-blue);
+      border-radius: 32px;
+      padding: 1.6rem;
+    }
+    .degree-badge {
+      background: rgba(44, 125, 160, 0.12);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      display: inline-flex;
+      gap: 8px;
+      font-weight: 700;
+      margin: 0.8rem 0;
+    }
+    .classes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .class-card {
+      background: white;
+      border-radius: 36px;
+      padding: 2rem;
+      flex: 1 1 300px;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #eef2ff;
+    }
+    .class-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+    .contact-info, .contact-form {
+      flex: 1;
+    }
+    .input-group input, .input-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border-radius: 60px;
+      border: 1px solid #e2e8f0;
+      background: white;
+      transition: all 0.3s;
+    }
+    .input-group input:focus, .input-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      color: var(--text-muted);
+      border-top: 1px solid #eef2f6;
+    }
+
+    /* Smooth animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.92);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar { width: calc(100% - 24px); padding: 0.8rem 1.2rem; border-radius: 50px; }
+      .navbar.scrolled { padding: 0.45rem 1.2rem; }
+      .hero-content h1 { font-size: 2.4rem; }
+      .hero-image img { width: 260px; height: 260px; }
+      .stats-counter-box { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+      .nav-links { gap: 1.2rem; }
+      .logo { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background photo with fade -->
+<div class="bg-photo">
+  <img src="kasun.jpg" alt="Kasun Liyanage Background">
+</div>
+
+<!-- Animated chemical formulas & lewis structures -->
+<div class="animated-bg">
+  <div class="chem-float">H₂O • CH₄ • NH₃ • Lewis</div>
+  <div class="chem-float">C₆H₁₂O₆ • :O: • sp³d²</div>
+  <div class="chem-float">苯 • C₆H₆ • π-bond • σ-bond</div>
+  <div class="chem-float">ΔG° = -RT lnK • E°cell • Kₐ</div>
+  <div class="chem-float">CH₃COOH ⇌ H⁺ • CH₃COO⁻</div>
+  <div class="chem-float">:Cl: • Na⁺ • VSEPR • tetrahedral</div>
+  <div class="chem-float">[Fe(CN)₆]⁴⁻ • resonance</div>
+  <div class="chem-float">C₂H₅OH • H₂SO₄ • alkene</div>
+  <div class="chem-float">Lewis structure • H—C≡C—H</div>
+  <div class="chem-float">sp³ hybridization • dipole moment</div>
+</div>
+
+<!-- Glassy navigation bar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-flex">
+    <div class="logo">Kasun Liyanage <span>| A/L Chem</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#classes">Centers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+        <div class="hero-badge"><i class="fas fa-university"></i> University of Colombo | BSc Chemistry (Hons)</div>
+        <h1>Master A/L Chemistry with <span class="highlight">Kasun Liyanage</span></h1>
+        <p class="hero-desc">Island rank-holder educator & University of Colombo graduate. Proven strategies for National Syllabus excellence — transform your potential into top results.</p>
+        <div style="margin-top: 2rem;">
+          <a href="#classes" class="btn"><i class="fas fa-calendar-alt"></i> Class Schedule</a>
+          <a href="#contact" class="btn btn-outline" style="margin-left: 1rem;"><i class="fas fa-envelope"></i> Enroll Now</a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+        <img src="kasun.jpg" alt="Mr. Kasun Liyanage - Chemistry Teacher">
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- STATISTICS COUNTER BOX - More vertical layout with grid -->
+    <div class="stats-counter-box" data-aos="fade-up" data-aos-duration="700">
+      <div class="counter-item">
+        <div class="counter-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="counter-number" id="counterAPass">0</div>
+        <div class="counter-label">A Pass Percentage</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="counter-number" id="counterStudents">0</div>
+        <div class="counter-label">Students Mentored</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="counter-number" id="counterExp">0</div>
+        <div class="counter-label">Years of Excellence</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-icon"><i class="fas fa-medal"></i></div>
+        <div class="counter-number" id="counterRankers">0</div>
+        <div class="counter-label">District Rankers</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <span class="section-title" data-aos="fade-right">Academic Profile</span>
+      <div class="section-sub" data-aos="fade-right" data-aos-delay="50">University of Colombo graduate | Nationally recognized educator</div>
+      <div class="about-card" data-aos="fade-up" data-aos-duration="700">
+        <div class="about-grid">
+          <div class="about-text">
+            <h3 style="color: var(--navy-dark);">Kasun Liyanage, BSc (Hons) Chemistry</h3>
+            <p>I graduated with honors in Chemistry from the <strong>University of Colombo</strong>, one of Sri Lanka's premier institutions. My passion for teaching led me to achieve <strong>Island Rank 07</strong> at the Sri Lanka Teachers' Service Examination, a testament to my pedagogical excellence.</p>
+            <div class="degree-badge"><i class="fas fa-certificate"></i> Island Rank 07 — Teachers' Exam | University of Colombo Alumnus</div>
+            <p>Over the past decade, I've refined a result-driven methodology focusing on concept building, past paper mastery, and personalized feedback. My students consistently achieve 'A' grades and gain admission to top universities.</p>
+          </div>
+          <div class="about-highlights">
+            <ul style="list-style: none;">
+              <li><i class="fas fa-check-circle" style="color:var(--accent-blue); margin-right: 12px;"></i> Specialized in Organic & Physical Chemistry</li>
+              <li><i class="fas fa-check-circle" style="color:var(--accent-blue); margin-right: 12px; margin-top: 12px; display: inline-block;"></i> Bilingual medium (Sinhala/English)</li>
+              <li><i class="fas fa-check-circle" style="color:var(--accent-blue); margin-right: 12px; margin-top: 12px; display: inline-block;"></i> Weekly mock exams & feedback</li>
+              <li><i class="fas fa-check-circle" style="color:var(--accent-blue); margin-right: 12px; margin-top: 12px; display: inline-block;"></i> Recorded revision library access</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="classes">
+      <span class="section-title" data-aos="fade-right">Class Centers</span>
+      <div class="section-sub" data-aos="fade-right" data-aos-delay="50">Two premier locations — flexible schedules</div>
+      <div class="classes-container">
+        <div class="class-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="class-icon"><i class="fas fa-landmark" style="color: var(--accent-blue); font-size: 2rem;"></i></div>
+          <h3>Panadura Center</h3>
+          <div class="class-center-name"><strong>Samathwee Higher Education Center</strong></div>
+          <div class="address"><i class="fas fa-location-dot"></i> Sri Mahavihara road , Panadura. (Kethumathi hosptal road)</div>
+          <div class="schedule" style="background:#eef5ff; padding:0.4rem 1rem; border-radius:40px; display:inline-block; margin-top:1rem;"><i class="far fa-clock"></i> 2026 A/L Thu | 3:00 PM – 8:30 PM</div>
+          <div class="schedule" style="background:#eef5ff; padding:0.4rem 1rem; border-radius:40px; display:inline-block; margin-top:1rem;"><i class="far fa-clock"></i> 2027 A/L Tue | 3:00 PM – 6:30 PM</div>
+        </div>
+
+        <div class="class-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="class-icon"><i class="fas fa-city" style="color: var(--accent-blue); font-size: 2rem;"></i></div>
+          <h3>Horana Center</h3>
+          <div class="class-center-name"><strong>Apex Metro Institute of Science</strong></div>
+          <div class="address"><i class="fas fa-location-dot"></i> Horana City Plaza, Horana Town</div>
+          <div class="schedule" style="background:#eef5ff; padding:0.4rem 1rem; border-radius:40px; display:inline-block; margin-top:1rem;"><i class="far fa-clock"></i>  2026 A/L Fri | 4:00 PM – 6:15 PM</div>
+          <div class="schedule" style="background:#eef5ff; padding:0.4rem 1rem; border-radius:40px; display:inline-block; margin-top:1rem;"><i class="far fa-clock"></i> 2027 A/L Wed | 3:00 PM – 6:30 PM</div>
+        </div>
+        <div class="class-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="class-icon"><i class="fas fa-star-of-life" style="color: var(--accent-blue); font-size: 2rem;"></i></div>
+          <h3>Batch Features</h3>
+          <div class="address">✅ Printed module notes<br>✅ Weekly progress tests<br>✅ Individual doubt sessions<br>✅ Past paper discussion clinics</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <span class="section-title" data-aos="fade-right">Connect With Me</span>
+      <div class="section-sub" data-aos="fade-right" data-aos-delay="50">Reserve your seat or ask any question</div>
+      <div class="contact-section" data-aos="fade-up" data-aos-duration="700">
+        <div class="contact-flex">
+          <div class="contact-info">
+            <h3><i class="fas fa-address-card"></i> Direct Contact</h3>
+            <div class="contact-detail" style="display:flex; gap:1rem; margin:1.2rem 0;"><i class="fas fa-phone-alt" style="width:32px; color: var(--accent-blue);"></i> <span>+94 77 123 8901</span></div>
+            <div class="contact-detail" style="display:flex; gap:1rem; margin:1.2rem 0;"><i class="fas fa-envelope" style="width:32px; color: var(--accent-blue);"></i> <span>sasindagimhana10@gmail.com</span></div>
+            <div class="contact-detail" style="display:flex; gap:1rem; margin:1.2rem 0;"><i class="fab fa-whatsapp" style="width:32px; color: var(--accent-blue);"></i> <span>+94 71 456 7890 (24h support)</span></div>
+            <div style="background:var(--light-blue); padding:1rem; border-radius:28px; margin-top:1.5rem;">
+              <i class="fas fa-clock"></i> <strong>Office hours:</strong> 9:00 AM – 7:00 PM (Weekdays)
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>Send Inquiry</h3>
+            <form id="contactFormFinal">
+              <div class="input-group"><input type="text" placeholder="Full Name" required></div>
+              <div class="input-group"><input type="email" placeholder="Email Address" required></div>
+              <div class="input-group"><input type="tel" placeholder="Phone with WhatsApp"></div>
+              <div class="input-group"><textarea rows="3" placeholder="I'm interested in Panadura / Horana center or A/L Chemistry 2026 batch..."></textarea></div>
+              <button type="submit" class="btn" style="width:100%; justify-content:center;">Submit Inquiry <i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <p>© 2026 Kasun Liyanage — BSc (Hons) Chemistry, University of Colombo | Island Rank 07 (Teachers' Exam) | A/L Chemistry Specialist, Sri Lanka</p>
+    <p style="margin-top:0.5rem;"><i class="fas fa-atom"></i> Excellence through conceptual clarity & dedicated mentorship</p>
+     <p class="developer">Developed by <a href="https://sg-web-solutions.vercel.app/" target="_blank">S G Web Solutions</a></p>
+  </footer>
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Initialize AOS for scroll animations
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 80,
+    easing: 'ease-out-quad'
+  });
+
+  // Shrinking navbar on scroll - more vertical (compact)
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    
+    // Active link highlighting
+    let sections = document.querySelectorAll('section');
+    let scrollPos = window.scrollY + 150;
+    sections.forEach(sec => {
+      if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+        let id = sec.getAttribute('id');
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) link.classList.add('active');
+        });
+      }
+    });
+  });
+
+  // Number counter animation (smooth increment)
+  const counters = [
+    { id: 'counterAPass', target: 89 },
+    { id: 'counterStudents', target: 1850 },
+    { id: 'counterExp', target: 11 },
+    { id: 'counterRankers', target: 34 }
+  ];
+
+  function animateNumbers() {
+    counters.forEach(counter => {
+      const element = document.getElementById(counter.id);
+      if (!element) return;
+      let current = 0;
+      const target = counter.target;
+      const duration = 1800;
+      const stepTime = 20;
+      const steps = duration / stepTime;
+      const increment = target / steps;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.innerText = target;
+          clearInterval(timer);
+        } else {
+          element.innerText = Math.floor(current);
+        }
+      }, stepTime);
+    });
+  }
+
+  // Intersection Observer for stats counter
+  const statsBox = document.querySelector('.stats-counter-box');
+  let counted = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counted) {
+        counted = true;
+        animateNumbers();
+      }
+    });
+  }, { threshold: 0.3 });
+  if (statsBox) observer.observe(statsBox);
+  
+  // Fallback
+  setTimeout(() => {
+    if (!counted && statsBox && statsBox.getBoundingClientRect().top < window.innerHeight) {
+      counted = true;
+      animateNumbers();
+    }
+  }, 1000);
+
+  // Form handler
+  const form = document.getElementById('contactFormFinal');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you! Mr. Kasun Liyanage will respond shortly with class details & fee structure.');
+      form.reset();
+    });
+  }
+
+  // Smooth scroll for navigation and buttons
+  document.querySelectorAll('.nav-links a, .btn[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
