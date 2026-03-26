@@ -1,335 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Kasun Liyanage | A/L Chemistry</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#fff;color:#0a1927;line-height:1.5;scroll-behavior:smooth;overflow-x:hidden}
-:root{
-  --navy:#0a1a2f;--blue:#2c7da0;--gold:#e9b35f;--light:#eef5ff;
-  --muted:#4a5b6e;--sh-sm:0 8px 20px rgba(0,0,0,.04);
-  --sh-md:0 20px 40px -12px rgba(0,0,0,.12)
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Kasun Liyanage | A/L Chemistry</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fff;color:#0a1927;line-height:1.5;scroll-behavior:smooth;overflow-x:hidden}:root{ --navy:#0a1a2f;--blue:#2c7da0;--gold:#e9b35f;--light:#eef5ff; --muted:#4a5b6e;--sh-sm:0 8px 20px rgba(0,0,0,.04); --sh-md:0 20px 40px -12px rgba(0,0,0,.12)}.bg-photo{position:fixed;inset:0;z-index:-2}.bg-photo img{width:100%;height:100%;object-fit:cover;opacity:.08}.bg-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.9))}.animated-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.cf{position:absolute;font-family:'Courier New',monospace;font-weight:700;white-space:nowrap;color:rgba(44,125,160,.18);animation:rise 24s infinite linear;user-select:none;font-size:1rem}@keyframes rise{0%{transform:translateY(100vh) rotate(0);opacity:0}10%{opacity:.5}90%{opacity:.5}100%{transform:translateY(-15vh) rotate(6deg);opacity:0}}.cf:nth-child(1){left:5%;animation-duration:26s}.cf:nth-child(2){left:20%;animation-duration:33s;animation-delay:-4s}.cf:nth-child(3){left:40%;animation-duration:29s;animation-delay:-8s;font-size:1.25rem}.cf:nth-child(4){left:62%;animation-duration:37s;animation-delay:-12s}.cf:nth-child(5){left:80%;animation-duration:27s;animation-delay:-2s}.cf:nth-child(6){left:12%;animation-duration:41s;animation-delay:-16s;font-size:.85rem}.cf:nth-child(7){left:54%;animation-duration:31s;animation-delay:-6s;font-size:1.2rem}.cf:nth-child(8){left:74%;animation-duration:35s;animation-delay:-10s}
+/* NAVBAR */.navbar{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:1320px;background:rgba(10,26,47,.7);backdrop-filter:blur(18px);border-radius:80px;padding:.8rem 1.8rem;z-index:1000;border:1px solid rgba(255,255,255,.25);box-shadow:0 8px 28px rgba(0,0,0,.1);transition:all .35s}.navbar.scrolled{top:8px;padding:.5rem 1.8rem;background:rgba(10,26,47,.92);border-radius:60px}.nav-flex{display:flex;align-items:center;justify-content:space-between;gap:1rem}.logo{font-weight:800;font-size:1.25rem;color:#fff;white-space:nowrap;flex-shrink:0}.logo span{color:var(--gold)}.nav-links{display:flex;gap:1.8rem;list-style:none}.nav-links a{text-decoration:none;font-weight:600;color:rgba(255,255,255,.9);font-size:.9rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:all .25s;white-space:nowrap}.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold)}.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0}.hamburger span{display:block;width:23px;height:2px;background:#fff;border-radius:2px;transition:all .3s}.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.mob-nav{display:none;position:fixed;inset:0;background:rgba(10,26,47,.97);backdrop-filter:blur(16px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}.mob-nav.open{display:flex}.mob-nav a{text-decoration:none;font-size:1.7rem;font-weight:700;color:rgba(255,255,255,.9);transition:color .2s}.mob-nav a:hover{color:var(--gold)}
+/* LAYOUT */.container{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:5}
+/* HERO */.hero{padding:7.5rem 0 3.5rem;min-height:100vh;display:flex;align-items:center}.hero-grid{display:flex;align-items:center;gap:3.5rem}.hero-content{flex:1.1;animation:fadeUp .8s ease-out}.hero-badge{background:rgba(10,26,47,.85);color:#fff;display:inline-flex;align-items:center;gap:8px;padding:.42rem 1.2rem;border-radius:60px;font-size:.76rem;font-weight:600;margin-bottom:1.3rem}.hero-content h1{font-size:3.3rem;font-weight:800;line-height:1.2;color:var(--navy)}.highlight{color:var(--blue)}.hero-desc{font-size:1.05rem;color:var(--muted);margin:1rem 0 0;max-width:540px}.btn-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}.hero-image{flex:.9;text-align:center;animation:fadeScale .8s ease-out}.hero-image img{width:320px;height:320px;object-fit:cover;border-radius:38% 62% 40% 60%/55% 45% 55% 45%;box-shadow:0 28px 50px -18px rgba(0,0,0,.28);border:5px solid rgba(255,255,250,.95);transition:transform .5s}.hero-image img:hover{transform:scale(1.02)}
+/* BUTTONS */.btn{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;padding:.82rem 2rem;border-radius:48px;text-decoration:none;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:all .35s}.btn:hover{background:var(--blue);transform:translateY(-3px);box-shadow:0 12px 25px -10px rgba(10,26,47,.4)}.btn-o{background:transparent;border:1.5px solid var(--navy);color:var(--navy)}.btn-o:hover{background:var(--navy);color:#fff}
+/* STATS */.stats-box{background:rgba(255,255,255,.97);border-radius:40px;padding:1.8rem;margin:1.8rem 0 3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;box-shadow:var(--sh-md);border:1px solid rgba(10,26,47,.09)}.cnt{text-align:center;padding:.4rem;transition:transform .3s}.cnt:hover{transform:translateY(-4px)}.cnt-ico{font-size:1.6rem;color:var(--blue);margin-bottom:.4rem}.cnt-num{font-size:2.6rem;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-1px}.cnt-lbl{font-size:.76rem;color:var(--muted);margin-top:.45rem;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+/* SECTION TITLES */.sec-title{font-size:2rem;font-weight:700;color:var(--navy);position:relative;display:inline-block;margin-bottom:.4rem}.sec-title::after{content:'';position:absolute;bottom:-10px;left:0;width:58px;height:3px;background:var(--gold);border-radius:3px}.sec-sub{color:var(--muted);margin-top:.9rem;margin-bottom:2rem;font-size:.97rem}
+/* CARD */.card{background:rgba(255,255,255,.95);border-radius:40px;padding:2rem 2.2rem;box-shadow:var(--sh-sm);margin:1.8rem 0 3rem;border:1px solid rgba(10,26,47,.07);transition:transform .35s,box-shadow .35s}.card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+/* ABOUT */.about-grid{display:flex;gap:2rem;flex-wrap:wrap}.about-text{flex:2;min-width:0}.about-text p{margin-bottom:.9rem;color:#334155}.about-hi{flex:1;min-width:190px;background:var(--light);border-radius:26px;padding:1.4rem}.about-hi ul{list-style:none}.about-hi li{display:flex;align-items:flex-start;gap:10px;margin-bottom:.9rem;font-size:.92rem;line-height:1.45}.about-hi li i{margin-top:2px;flex-shrink:0;color:var(--blue)}.deg-badge{background:rgba(44,125,160,.12);padding:.38rem 1.1rem;border-radius:40px;display:inline-flex;gap:8px;font-weight:700;font-size:.84rem;margin:.7rem 0 .9rem;color:var(--navy)}
+/* CLASSES */.classes-wrap{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.8rem 0 3rem}.class-card{background:#fff;border-radius:30px;padding:1.8rem;flex:1 1 280px;box-shadow:var(--sh-sm);border:1px solid #eef2ff;transition:all .4s cubic-bezier(.2,.9,.4,1.1)}.class-card:hover{transform:translateY(-8px);box-shadow:var(--sh-md)}.class-card h3{margin:.65rem 0 .4rem;color:var(--navy)}.class-ctr{margin-bottom:.55rem;font-size:.93rem}.addr{color:var(--muted);font-size:.88rem;line-height:1.6}.sch{background:var(--light);padding:.38rem 1rem;border-radius:40px;display:inline-block;margin-top:.75rem;font-size:.84rem}
+/* CONTACT */.contact-flex{display:flex;flex-wrap:wrap;gap:2.5rem}.c-info,.c-form{flex:1;min-width:240px}.c-detail{display:flex;gap:.9rem;align-items:flex-start;margin:1.1rem 0}.c-detail i{width:26px;color:var(--blue);flex-shrink:0;margin-top:2px}.ig{margin-bottom:.9rem}.ig input,.ig textarea{width:100%;padding:.88rem 1.1rem;border-radius:48px;border:1px solid #e2e8f0;background:#fff;font-family:inherit;font-size:.94rem;transition:all .3s}.ig textarea{border-radius:18px}.ig input:focus,.ig textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,125,160,.1)}
+/* --- 8. PROFESSIONAL FOOTER --- */
+.main-footer {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 80px 8% 30px;
+    border-top: 1px solid #222;
 }
-.bg-photo{position:fixed;inset:0;z-index:-2}
-.bg-photo img{width:100%;height:100%;object-fit:cover;opacity:.08}
-.bg-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.9))}
-.animated-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.cf{position:absolute;font-family:'Courier New',monospace;font-weight:700;white-space:nowrap;color:rgba(44,125,160,.18);animation:rise 24s infinite linear;user-select:none;font-size:1rem}
-@keyframes rise{0%{transform:translateY(100vh) rotate(0);opacity:0}10%{opacity:.5}90%{opacity:.5}100%{transform:translateY(-15vh) rotate(6deg);opacity:0}}
-.cf:nth-child(1){left:5%;animation-duration:26s}
-.cf:nth-child(2){left:20%;animation-duration:33s;animation-delay:-4s}
-.cf:nth-child(3){left:40%;animation-duration:29s;animation-delay:-8s;font-size:1.25rem}
-.cf:nth-child(4){left:62%;animation-duration:37s;animation-delay:-12s}
-.cf:nth-child(5){left:80%;animation-duration:27s;animation-delay:-2s}
-.cf:nth-child(6){left:12%;animation-duration:41s;animation-delay:-16s;font-size:.85rem}
-.cf:nth-child(7){left:54%;animation-duration:31s;animation-delay:-6s;font-size:1.2rem}
-.cf:nth-child(8){left:74%;animation-duration:35s;animation-delay:-10s}
 
-/* NAVBAR */
-.navbar{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:1320px;background:rgba(10,26,47,.7);backdrop-filter:blur(18px);border-radius:80px;padding:.8rem 1.8rem;z-index:1000;border:1px solid rgba(255,255,255,.25);box-shadow:0 8px 28px rgba(0,0,0,.1);transition:all .35s}
-.navbar.scrolled{top:8px;padding:.5rem 1.8rem;background:rgba(10,26,47,.92);border-radius:60px}
-.nav-flex{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{font-weight:800;font-size:1.25rem;color:#fff;white-space:nowrap;flex-shrink:0}
-.logo span{color:var(--gold)}
-.nav-links{display:flex;gap:1.8rem;list-style:none}
-.nav-links a{text-decoration:none;font-weight:600;color:rgba(255,255,255,.9);font-size:.9rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:all .25s;white-space:nowrap}
-.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold)}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0}
-.hamburger span{display:block;width:23px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mob-nav{display:none;position:fixed;inset:0;background:rgba(10,26,47,.97);backdrop-filter:blur(16px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
-.mob-nav.open{display:flex}
-.mob-nav a{text-decoration:none;font-size:1.7rem;font-weight:700;color:rgba(255,255,255,.9);transition:color .2s}
-.mob-nav a:hover{color:var(--gold)}
-
-/* LAYOUT */
-.container{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:5}
-
-/* HERO */
-.hero{padding:7.5rem 0 3.5rem;min-height:100vh;display:flex;align-items:center}
-.hero-grid{display:flex;align-items:center;gap:3.5rem}
-.hero-content{flex:1.1;animation:fadeUp .8s ease-out}
-.hero-badge{background:rgba(10,26,47,.85);color:#fff;display:inline-flex;align-items:center;gap:8px;padding:.42rem 1.2rem;border-radius:60px;font-size:.76rem;font-weight:600;margin-bottom:1.3rem}
-.hero-content h1{font-size:3.3rem;font-weight:800;line-height:1.2;color:var(--navy)}
-.highlight{color:var(--blue)}
-.hero-desc{font-size:1.05rem;color:var(--muted);margin:1rem 0 0;max-width:540px}
-.btn-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
-.hero-image{flex:.9;text-align:center;animation:fadeScale .8s ease-out}
-.hero-image img{width:320px;height:320px;object-fit:cover;border-radius:38% 62% 40% 60%/55% 45% 55% 45%;box-shadow:0 28px 50px -18px rgba(0,0,0,.28);border:5px solid rgba(255,255,250,.95);transition:transform .5s}
-.hero-image img:hover{transform:scale(1.02)}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;padding:.82rem 2rem;border-radius:48px;text-decoration:none;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:all .35s}
-.btn:hover{background:var(--blue);transform:translateY(-3px);box-shadow:0 12px 25px -10px rgba(10,26,47,.4)}
-.btn-o{background:transparent;border:1.5px solid var(--navy);color:var(--navy)}
-.btn-o:hover{background:var(--navy);color:#fff}
-
-/* STATS */
-.stats-box{background:rgba(255,255,255,.97);border-radius:40px;padding:1.8rem;margin:1.8rem 0 3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;box-shadow:var(--sh-md);border:1px solid rgba(10,26,47,.09)}
-.cnt{text-align:center;padding:.4rem;transition:transform .3s}
-.cnt:hover{transform:translateY(-4px)}
-.cnt-ico{font-size:1.6rem;color:var(--blue);margin-bottom:.4rem}
-.cnt-num{font-size:2.6rem;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-1px}
-.cnt-lbl{font-size:.76rem;color:var(--muted);margin-top:.45rem;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
-
-/* SECTION TITLES */
-.sec-title{font-size:2rem;font-weight:700;color:var(--navy);position:relative;display:inline-block;margin-bottom:.4rem}
-.sec-title::after{content:'';position:absolute;bottom:-10px;left:0;width:58px;height:3px;background:var(--gold);border-radius:3px}
-.sec-sub{color:var(--muted);margin-top:.9rem;margin-bottom:2rem;font-size:.97rem}
-
-/* CARD */
-.card{background:rgba(255,255,255,.95);border-radius:40px;padding:2rem 2.2rem;box-shadow:var(--sh-sm);margin:1.8rem 0 3rem;border:1px solid rgba(10,26,47,.07);transition:transform .35s,box-shadow .35s}
-.card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
-
-/* ABOUT */
-.about-grid{display:flex;gap:2rem;flex-wrap:wrap}
-.about-text{flex:2;min-width:0}
-.about-text p{margin-bottom:.9rem;color:#334155}
-.about-hi{flex:1;min-width:190px;background:var(--light);border-radius:26px;padding:1.4rem}
-.about-hi ul{list-style:none}
-.about-hi li{display:flex;align-items:flex-start;gap:10px;margin-bottom:.9rem;font-size:.92rem;line-height:1.45}
-.about-hi li i{margin-top:2px;flex-shrink:0;color:var(--blue)}
-.deg-badge{background:rgba(44,125,160,.12);padding:.38rem 1.1rem;border-radius:40px;display:inline-flex;gap:8px;font-weight:700;font-size:.84rem;margin:.7rem 0 .9rem;color:var(--navy)}
-
-/* CLASSES */
-.classes-wrap{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.8rem 0 3rem}
-.class-card{background:#fff;border-radius:30px;padding:1.8rem;flex:1 1 280px;box-shadow:var(--sh-sm);border:1px solid #eef2ff;transition:all .4s cubic-bezier(.2,.9,.4,1.1)}
-.class-card:hover{transform:translateY(-8px);box-shadow:var(--sh-md)}
-.class-card h3{margin:.65rem 0 .4rem;color:var(--navy)}
-.class-ctr{margin-bottom:.55rem;font-size:.93rem}
-.addr{color:var(--muted);font-size:.88rem;line-height:1.6}
-.sch{background:var(--light);padding:.38rem 1rem;border-radius:40px;display:inline-block;margin-top:.75rem;font-size:.84rem}
-
-/* CONTACT */
-.contact-flex{display:flex;flex-wrap:wrap;gap:2.5rem}
-.c-info,.c-form{flex:1;min-width:240px}
-.c-detail{display:flex;gap:.9rem;align-items:flex-start;margin:1.1rem 0}
-.c-detail i{width:26px;color:var(--blue);flex-shrink:0;margin-top:2px}
-.ig{margin-bottom:.9rem}
-.ig input,.ig textarea{width:100%;padding:.88rem 1.1rem;border-radius:48px;border:1px solid #e2e8f0;background:#fff;font-family:inherit;font-size:.94rem;transition:all .3s}
-.ig textarea{border-radius:18px}
-.ig input:focus,.ig textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,125,160,.1)}
-
-/* FOOTER */
-footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);border-top:1px solid #eef2f6;font-size:.87rem;line-height:1.9}
-footer a{color:var(--blue);text-decoration:none}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(38px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeScale{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
-
-/* MOBILE */
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .navbar{width:calc(100% - 18px);padding:.7rem 1.1rem;top:9px;border-radius:48px}
-  .navbar.scrolled{padding:.45rem 1.1rem;top:6px}
-  .logo{font-size:1rem}
-  .hero{padding:6rem 0 2.5rem;min-height:auto;align-items:flex-start}
-  .hero-grid{flex-direction:column-reverse;gap:1.6rem;align-items:center}
-  .hero-content{text-align:center;width:100%}
-  .hero-content h1{font-size:1.95rem}
-  .hero-desc{font-size:.93rem;max-width:100%}
-  .hero-badge{font-size:.7rem;padding:.38rem .9rem}
-  .hero-image img{width:185px;height:185px}
-  .btn-row{flex-direction:column;align-items:center;gap:.75rem}
-  .btn-row .btn{width:100%;max-width:272px;justify-content:center}
-  .stats-box{grid-template-columns:1fr 1fr;gap:.75rem;border-radius:26px;padding:1.1rem;margin:1.1rem 0 2.2rem}
-  .cnt-num{font-size:1.9rem}
-  .cnt-lbl{font-size:.7rem}
-  .cnt-ico{font-size:1.3rem}
-  .sec-title{font-size:1.55rem}
-  .card{border-radius:26px;padding:1.4rem 1.2rem}
-  .about-grid{flex-direction:column;gap:1.3rem}
-  .about-hi{min-width:unset}
-  .classes-wrap{gap:.9rem}
-  .class-card{flex:1 1 100%;border-radius:22px;padding:1.3rem}
-  .c-info,.c-form{min-width:100%;flex:1 1 100%}
-  .contact-flex{gap:1.5rem}
-  .container{padding:0 13px}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-@media(max-width:380px){
-  .hero-content h1{font-size:1.65rem}
-  .logo{font-size:.88rem}
-  .cnt-num{font-size:1.6rem}
+
+.footer-brand { flex: 2; min-width: 280px; }
+.footer-brand p { color: #888; line-height: 1.6; margin-top: 10px; max-width: 350px; }
+
+.footer-nav, .footer-social { flex: 1; min-width: 150px; }
+
+.footer-nav h4, .footer-social h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #000000;
 }
-</style>
-</head>
-<body>
 
-<div class="bg-photo"><img src="kasun.jpg" alt="bg"></div>
-<div class="animated-bg">
-  <div class="cf">H2O - CH4 - NH3 - Lewis</div>
-  <div class="cf">C6H12O6 - sp3d2</div>
-  <div class="cf">C6H6 - pi-bond - sigma-bond</div>
-  <div class="cf">delta-G = -RT lnK - Ka</div>
-  <div class="cf">CH3COOH = H+ + CH3COO-</div>
-  <div class="cf">Na+ - VSEPR - tetrahedral</div>
-  <div class="cf">[Fe(CN)6]4- - resonance</div>
-  <div class="cf">sp3 hybridization - dipole</div>
-</div>
+.footer-nav ul { list-style: none; }
+.footer-nav li { margin-bottom: 12px; }
+.footer-nav a { color: #888; text-decoration: none; transition: 0.3s; }
+.footer-nav a:hover { color: #007AFF; padding-left: 5px; }
 
-<div class="mob-nav" id="mobNav">
-  <a href="#home"    onclick="closeMob()">Home</a>
-  <a href="#about"   onclick="closeMob()">About</a>
-  <a href="#classes" onclick="closeMob()">Centers</a>
-  <a href="#contact" onclick="closeMob()">Contact</a>
-</div>
+/* Social Icons Styling */
+.social-icons { display: flex; gap: 15px; }
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: rgb(255, 253, 253);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: 0.4s;
+    border: 1px solid #333;
+}
 
-<nav class="navbar" id="navbar">
-  <div class="nav-flex">
-    <div class="logo">Kasun Liyanage <span>| A/L Chem</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#classes">Centers</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+/* Brand specific colors on hover */
+.icon-fb:hover { background: #3b5998; border-color: #3b5998; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(59, 89, 152, 0.3); }
+.icon-ig:hover { background: #e1306c; border-color: #e1306c; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(225, 48, 108, 0.3); }
+.icon-wa:hover { background: #25d366; border-color: #25d366; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
 
-<main>
-<section id="home" class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content" data-aos="fade-up">
-        <div class="hero-badge"><i class="fas fa-university"></i> University of Colombo | BSc Chemistry (Hons)</div>
-        <h1>Master A/L Chemistry with <span class="highlight">Kasun Liyanage</span></h1>
-        <p class="hero-desc">Island rank-holder educator and University of Colombo graduate. Proven strategies for National Syllabus excellence — transform your potential into top results.</p>
-        <div class="btn-row">
-          <a href="#classes" class="btn"><i class="fas fa-calendar-alt"></i> Class Schedule</a>
-          <a href="#contact" class="btn btn-o"><i class="fas fa-envelope"></i> Enroll Now</a>
-        </div>
-      </div>
-      <div class="hero-image" data-aos="fade-left" data-aos-delay="100">
-        <img src="kasun.jpg" alt="Mr. Kasun Liyanage">
-      </div>
-    </div>
-  </div>
-</section>
+/* Bottom Bar */
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #000000;
+    text-align: center;
+}
 
+.footer-bottom p { color: #000000; font-size: 0.85rem; margin-bottom: 10px; }
+.developer { font-size: 0.75rem !important; letter-spacing: 1px; }
+.developer a { 
+    color: #007AFF; 
+    text-decoration: none; 
+    font-weight: 800; 
+    transition: 0.3s;
+}
+.developer a:hover { text-decoration: underline; color: #000000; }
+
+@media (max-width: 768px) {
+    .main-footer { text-align: center; padding-top: 60px; }
+    .footer-brand p { margin: 10px auto; }
+    .social-icons { justify-content: center; }
+}
+/* FOOTER */footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);border-top:1px solid #eef2f6;font-size:.87rem;line-height:1.9}footer a{color:var(--blue);text-decoration:none}
+/* ANIMATIONS */@keyframes fadeUp{from{opacity:0;transform:translateY(38px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeScale{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
+/* MOBILE */@media(max-width:768px){ .nav-links{display:none} .hamburger{display:flex} .navbar{width:calc(100% - 18px);padding:.7rem 1.1rem;top:9px;border-radius:48px} .navbar.scrolled{padding:.45rem 1.1rem;top:6px} .logo{font-size:1rem} .hero{padding:6rem 0 2.5rem;min-height:auto;align-items:flex-start} .hero-grid{flex-direction:column-reverse;gap:1.6rem;align-items:center} .hero-content{text-align:center;width:100%} .hero-content h1{font-size:1.95rem} .hero-desc{font-size:.93rem;max-width:100%} .hero-badge{font-size:.7rem;padding:.38rem .9rem} .hero-image img{width:185px;height:185px} .btn-row{flex-direction:column;align-items:center;gap:.75rem} .btn-row .btn{width:100%;max-width:272px;justify-content:center} .stats-box{grid-template-columns:1fr 1fr;gap:.75rem;border-radius:26px;padding:1.1rem;margin:1.1rem 0 2.2rem} .cnt-num{font-size:1.9rem} .cnt-lbl{font-size:.7rem} .cnt-ico{font-size:1.3rem} .sec-title{font-size:1.55rem} .card{border-radius:26px;padding:1.4rem 1.2rem} .about-grid{flex-direction:column;gap:1.3rem} .about-hi{min-width:unset} .classes-wrap{gap:.9rem} .class-card{flex:1 1 100%;border-radius:22px;padding:1.3rem} .c-info,.c-form{min-width:100%;flex:1 1 100%} .contact-flex{gap:1.5rem} .container{padding:0 13px}}@media(max-width:380px){ .hero-content h1{font-size:1.65rem} .logo{font-size:.88rem} .cnt-num{font-size:1.6rem}}</style></head><body>
+<div class="bg-photo"><img src="kasun.jpg" alt="bg"></div><div class="animated-bg"> <div class="cf">H2O - CH4 - NH3 - Lewis</div> <div class="cf">C6H12O6 - sp3d2</div> <div class="cf">C6H6 - pi-bond - sigma-bond</div> <div class="cf">delta-G = -RT lnK - Ka</div> <div class="cf">CH3COOH = H+ + CH3COO-</div> <div class="cf">Na+ - VSEPR - tetrahedral</div> <div class="cf">[Fe(CN)6]4- - resonance</div> <div class="cf">sp3 hybridization - dipole</div></div>
+<div class="mob-nav" id="mobNav"> <a href="#home"    onclick="closeMob()">Home</a> <a href="#about"   onclick="closeMob()">About</a> <a href="#classes" onclick="closeMob()">Centers</a> <a href="#contact" onclick="closeMob()">Contact</a></div>
+<nav class="navbar" id="navbar"> <div class="nav-flex"> <div class="logo">Kasun Liyanage <span>| A/L Chem</span></div> <ul class="nav-links"> <li><a href="#home">Home</a></li> <li><a href="#about">About</a></li> <li><a href="#classes">Centers</a></li> <li><a href="#contact">Contact</a></li> </ul> <button class="hamburger" id="hamburger" aria-label="Menu"> <span></span><span></span><span></span> </button> </div></nav>
+<main><section id="home" class="hero"> <div class="container"> <div class="hero-grid"> <div class="hero-content" data-aos="fade-up"> <div class="hero-badge"><i class="fas fa-university"></i> University of Colombo | BSc Chemistry (Hons)</div> <h1>Master A/L Chemistry with <span class="highlight">Kasun Liyanage</span></h1> <p class="hero-desc">Island rank-holder educator and University of Colombo graduate. Proven strategies for National Syllabus excellence — transform your potential into top results.</p> <div class="btn-row"> <a href="#classes" class="btn"><i class="fas fa-calendar-alt"></i> Class Schedule</a> <a href="#contact" class="btn btn-o"><i class="fas fa-envelope"></i> Enroll Now</a> </div> </div> <div class="hero-image" data-aos="fade-left" data-aos-delay="100"> <img src="kasun.jpg" alt="Mr. Kasun Liyanage"> </div> </div> </div></section>
 <div class="container">
-
-<div class="stats-box" data-aos="fade-up">
-  <div class="cnt"><div class="cnt-ico"><i class="fas fa-chart-line"></i></div><div class="cnt-num" id="cA">0</div><div class="cnt-lbl">A Pass %</div></div>
-  <div class="cnt"><div class="cnt-ico"><i class="fas fa-user-graduate"></i></div><div class="cnt-num" id="cS">0</div><div class="cnt-lbl">Students Mentored</div></div>
-  <div class="cnt"><div class="cnt-ico"><i class="fas fa-calendar-alt"></i></div><div class="cnt-num" id="cE">0</div><div class="cnt-lbl">Years Excellence</div></div>
-  <div class="cnt"><div class="cnt-ico"><i class="fas fa-medal"></i></div><div class="cnt-num" id="cR">0</div><div class="cnt-lbl">District Rankers</div></div>
-</div>
-
-<section id="about">
-  <span class="sec-title" data-aos="fade-right">Academic Profile</span>
-  <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">University of Colombo graduate &mdash; Nationally recognized educator</p>
-  <div class="card" data-aos="fade-up">
-    <div class="about-grid">
-      <div class="about-text">
-        <h3 style="color:var(--navy);margin-bottom:.75rem">Kasun Liyanage, BSc (Hons) Chemistry</h3>
-        <p>I graduated with honors in Chemistry from the <strong>University of Colombo</strong>, one of Sri Lanka's premier institutions. My passion for teaching led me to achieve <strong>Island Rank 07</strong> at the Sri Lanka Teachers' Service Examination.</p>
-        <div class="deg-badge"><i class="fas fa-certificate"></i> Island Rank 07 &mdash; Teachers' Exam | University of Colombo Alumnus</div>
-        <p>Over the past decade I have refined a result-driven methodology focusing on concept building, past paper mastery, and personalized feedback. My students consistently achieve 'A' grades and gain admission to top universities.</p>
-      </div>
-      <div class="about-hi">
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Specialized in Organic &amp; Physical Chemistry</li>
-          <li><i class="fas fa-check-circle"></i> Bilingual medium (Sinhala / English)</li>
-          <li><i class="fas fa-check-circle"></i> Weekly mock exams &amp; feedback</li>
-          <li><i class="fas fa-check-circle"></i> Recorded revision library access</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="classes">
-  <span class="sec-title" data-aos="fade-right">Class Centers</span>
-  <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">Two premier locations &mdash; flexible schedules</p>
-  <div class="classes-wrap">
-    <div class="class-card" data-aos="fade-up">
-      <i class="fas fa-landmark" style="color:var(--blue);font-size:1.9rem"></i>
-      <h3>Panadura Center</h3>
-      <div class="class-ctr"><strong>Samathwee Higher Education Center</strong></div>
-      <div class="addr"><i class="fas fa-location-dot"></i> Sri Mahavihara Road, Panadura (Kethumathi Hospital Road)</div>
-      <div class="sch"><i class="far fa-clock"></i> 2026 A/L &mdash; Thu &nbsp;3:00 PM &ndash; 8:30 PM</div><br>
-      <div class="sch"><i class="far fa-clock"></i> 2027 A/L &mdash; Tue &nbsp;3:00 PM &ndash; 6:30 PM</div>
-    </div>
-    <div class="class-card" data-aos="fade-up" data-aos-delay="80">
-      <i class="fas fa-city" style="color:var(--blue);font-size:1.9rem"></i>
-      <h3>Horana Center</h3>
-      <div class="class-ctr"><strong>Apex Metro Institute of Science</strong></div>
-      <div class="addr"><i class="fas fa-location-dot"></i> Horana City Plaza, Horana Town</div>
-      <div class="sch"><i class="far fa-clock"></i> 2026 A/L &mdash; Fri &nbsp;4:00 PM &ndash; 6:15 PM</div><br>
-      <div class="sch"><i class="far fa-clock"></i> 2027 A/L &mdash; Wed &nbsp;3:00 PM &ndash; 6:30 PM</div>
-    </div>
-    <div class="class-card" data-aos="fade-up" data-aos-delay="160">
-      <i class="fas fa-star-of-life" style="color:var(--blue);font-size:1.9rem"></i>
-      <h3>Batch Features</h3>
-      <div class="addr" style="line-height:2.1">
-        &#10003;&nbsp; Printed module notes<br>
-        &#10003;&nbsp; Weekly progress tests<br>
-        &#10003;&nbsp; Individual doubt sessions<br>
-        &#10003;&nbsp; Past paper discussion clinics
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <span class="sec-title" data-aos="fade-right">Connect With Me</span>
-  <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">Reserve your seat or ask any question</p>
-  <div class="card" data-aos="fade-up">
-    <div class="contact-flex">
-      <div class="c-info">
-        <h3 style="margin-bottom:.4rem"><i class="fas fa-address-card"></i> Direct Contact</h3>
-        <div class="c-detail"><i class="fas fa-phone-alt"></i><span>+94 77 123 8901</span></div>
-        <div class="c-detail"><i class="fas fa-envelope"></i><span>sasindagimhana10 [at] gmail.com</span></div>
-        <div class="c-detail"><i class="fab fa-whatsapp"></i><span>+94 71 456 7890 (24h support)</span></div>
-        <div style="background:var(--light);padding:.9rem 1.1rem;border-radius:22px;margin-top:1.1rem;font-size:.88rem">
-          <i class="fas fa-clock"></i> <strong>Office hours:</strong> 9:00 AM &ndash; 7:00 PM (Weekdays)
-        </div>
-      </div>
-      <div class="c-form">
-        <h3 style="margin-bottom:.9rem">Send Inquiry</h3>
-        <form id="contactForm" novalidate>
-          <div class="ig"><input id="fn" type="text"  name="from_name"  placeholder="Full Name"           required></div>
-          <div class="ig"><input id="fe" type="email" name="from_email" placeholder="Email Address"       required></div>
-          <div class="ig"><input id="fp" type="tel"   name="from_phone" placeholder="Phone / WhatsApp"></div>
-          <div class="ig"><textarea id="fm" name="message" rows="3" placeholder="I am interested in Panadura / Horana center or A/L Chemistry 2026 batch..."></textarea></div>
-          <button type="submit" class="btn" id="subBtn" style="width:100%;justify-content:center">
-            <span id="bTxt">Submit Inquiry</span>
-            <i id="bIco" class="fas fa-arrow-right"></i>
-          </button>
-          <p id="fStatus" style="margin-top:.75rem;text-align:center;font-size:.88rem;font-weight:600;display:none"></p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
+<div class="stats-box" data-aos="fade-up"> <div class="cnt"><div class="cnt-ico"><i class="fas fa-chart-line"></i></div><div class="cnt-num" id="cA">0</div><div class="cnt-lbl">A Pass %</div></div> <div class="cnt"><div class="cnt-ico"><i class="fas fa-user-graduate"></i></div><div class="cnt-num" id="cS">0</div><div class="cnt-lbl">Students Mentored</div></div> <div class="cnt"><div class="cnt-ico"><i class="fas fa-calendar-alt"></i></div><div class="cnt-num" id="cE">0</div><div class="cnt-lbl">Years Excellence</div></div> <div class="cnt"><div class="cnt-ico"><i class="fas fa-medal"></i></div><div class="cnt-num" id="cR">0</div><div class="cnt-lbl">District Rankers</div></div></div>
+<section id="about"> <span class="sec-title" data-aos="fade-right">Academic Profile</span> <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">University of Colombo graduate &mdash; Nationally recognized educator</p> <div class="card" data-aos="fade-up"> <div class="about-grid"> <div class="about-text"> <h3 style="color:var(--navy);margin-bottom:.75rem">Kasun Liyanage, BSc (Hons) Chemistry</h3> <p>I graduated with honors in Chemistry from the <strong>University of Colombo</strong>, one of Sri Lanka's premier institutions. My passion for teaching led me to achieve <strong>Island Rank 07</strong> at the Sri Lanka Teachers' Service Examination.</p> <div class="deg-badge"><i class="fas fa-certificate"></i> Island Rank 07 &mdash; Teachers' Exam | University of Colombo Alumnus</div> <p>Over the past decade I have refined a result-driven methodology focusing on concept building, past paper mastery, and personalized feedback. My students consistently achieve 'A' grades and gain admission to top universities.</p> </div> <div class="about-hi"> <ul> <li><i class="fas fa-check-circle"></i> Specialized in Organic &amp; Physical Chemistry</li> <li><i class="fas fa-check-circle"></i> Bilingual medium (Sinhala / English)</li> <li><i class="fas fa-check-circle"></i> Weekly mock exams &amp; feedback</li> <li><i class="fas fa-check-circle"></i> Recorded revision library access</li> </ul> </div> </div> </div></section>
+<section id="classes"> <span class="sec-title" data-aos="fade-right">Class Centers</span> <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">Two premier locations &mdash; flexible schedules</p> <div class="classes-wrap"> <div class="class-card" data-aos="fade-up"> <i class="fas fa-landmark" style="color:var(--blue);font-size:1.9rem"></i> <h3>Panadura Center</h3> <div class="class-ctr"><strong>Samathwee Higher Education Center</strong></div> <div class="addr"><i class="fas fa-location-dot"></i> Sri Mahavihara Road, Panadura (Kethumathi Hospital Road)</div> <div class="sch"><i class="far fa-clock"></i> 2026 A/L &mdash; Thu &nbsp;3:00 PM &ndash; 8:30 PM</div><br> <div class="sch"><i class="far fa-clock"></i> 2027 A/L &mdash; Tue &nbsp;3:00 PM &ndash; 6:30 PM</div> </div> <div class="class-card" data-aos="fade-up" data-aos-delay="80"> <i class="fas fa-city" style="color:var(--blue);font-size:1.9rem"></i> <h3>Horana Center</h3> <div class="class-ctr"><strong>Apex Metro Institute of Science</strong></div> <div class="addr"><i class="fas fa-location-dot"></i> Horana City Plaza, Horana Town</div> <div class="sch"><i class="far fa-clock"></i> 2026 A/L &mdash; Fri &nbsp;4:00 PM &ndash; 6:15 PM</div><br> <div class="sch"><i class="far fa-clock"></i> 2027 A/L &mdash; Wed &nbsp;3:00 PM &ndash; 6:30 PM</div> </div> <div class="class-card" data-aos="fade-up" data-aos-delay="160"> <i class="fas fa-star-of-life" style="color:var(--blue);font-size:1.9rem"></i> <h3>Batch Features</h3> <div class="addr" style="line-height:2.1"> &#10003;&nbsp; Printed module notes<br> &#10003;&nbsp; Weekly progress tests<br> &#10003;&nbsp; Individual doubt sessions<br> &#10003;&nbsp; Past paper discussion clinics </div> </div> </div></section>
+<section id="contact"> <span class="sec-title" data-aos="fade-right">Connect With Me</span> <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">Reserve your seat or ask any question</p> <div class="card" data-aos="fade-up"> <div class="contact-flex"> <div class="c-info"> <h3 style="margin-bottom:.4rem"><i class="fas fa-address-card"></i> Direct Contact</h3> <div class="c-detail"><i class="fas fa-phone-alt"></i><span>+94 77 123 8901</span></div> <div class="c-detail"><i class="fas fa-envelope"></i><span>sasindagimhana10 [at] gmail.com</span></div> <div class="c-detail"><i class="fab fa-whatsapp"></i><span>+94 71 456 7890 (24h support)</span></div> <div style="background:var(--light);padding:.9rem 1.1rem;border-radius:22px;margin-top:1.1rem;font-size:.88rem"> <i class="fas fa-clock"></i> <strong>Office hours:</strong> 9:00 AM &ndash; 7:00 PM (Weekdays) </div> </div> <div class="c-form"> <h3 style="margin-bottom:.9rem">Send Inquiry</h3> <form id="contactForm" novalidate> <div class="ig"><input id="fn" type="text"  name="from_name"  placeholder="Full Name"           required></div> <div class="ig"><input id="fe" type="email" name="from_email" placeholder="Email Address"       required></div> <div class="ig"><input id="fp" type="tel"   name="from_phone" placeholder="Phone / WhatsApp"></div> <div class="ig"><textarea id="fm" name="message" rows="3" placeholder="I am interested in Panadura / Horana center or A/L Chemistry 2026 batch..."></textarea></div> <button type="submit" class="btn" id="subBtn" style="width:100%;justify-content:center"> <span id="bTxt">Submit Inquiry</span> <i id="bIco" class="fas fa-arrow-right"></i> </button> <p id="fStatus" style="margin-top:.75rem;text-align:center;font-size:.88rem;font-weight:600;display:none"></p> </form> </div> </div> </div></section></div>
 <footer>
-  <p>&copy; 2026 Kasun Liyanage &mdash; BSc (Hons) Chemistry, University of Colombo | Island Rank 07 (Teachers' Exam) | A/L Chemistry Specialist</p>
-  <p><i class="fas fa-atom"></i> Excellence through conceptual clarity &amp; dedicated mentorship</p>
-  <p>Developed by <a href="https://sg-web-solutions.vercel.app/" target="_blank">S G Web Solutions</a></p>
-</footer>
-</main>
+   <footer id="contact" class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand reveal">
+                <div class="nav-logo" style="color: rgb(0, 0, 0); margin-bottom: 15px;">
+                    <span class="dot">Smart Chemistry with Kasun Liyanage</span> 
+                </div>
+ <p>&copy; 2026 Kasun Liyanage &mdash; BSc (Hons) Chemistry, University of Colombo | Island Rank 07 (Teachers' Exam) | A/L Chemistry Specialist</p> <p><i class="fas fa-atom"></i> Excellence through conceptual clarity &amp; dedicated mentorship</p> <p>Developed by <a href="https://sg-web-solutions.vercel.app/" target="_blank">S G Web Solutions</a></p>            </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
+            <div class="footer-nav reveal">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social reveal">
+                <h4>Connect With Me</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/17Smdh8A2w/" class="icon-fb" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/umeshsathsindu?igsh=MW1xZjg2MWNiOGVyYw==" class="icon-ig" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/94779440623" class="icon-wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <strong>2026 Kasun Liyanage</strong>. All Rights Reserved.</p>
+            <p class="developer">Developed by <a href="https://sg-web-solutions.vercel.app/" target="_blank">S G Web Solutions</a></p>
+        </div>
+    </footer>
+  
+  
+ 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>
 AOS.init({duration:800,once:true,offset:80,easing:'ease-out-quad'});
-emailjs.init({publicKey:"y46Ilm5av-Eh9VHiD"});
+
+// Initialize EmailJS with public key (only once)
+emailjs.init({ publicKey: "y46Ilm5av-Eh9VHiD" });
 
 /* Navbar */
 const navbar=document.getElementById('navbar');
@@ -390,9 +202,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   });
 });
 
-/* EmailJS — re-init safely here to guarantee SDK is ready */
-emailjs.init({ publicKey: "y46Ilm5av-Eh9VHiD" });
-
+/* EmailJS form submission */
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var btn  = document.getElementById('subBtn');
@@ -401,19 +211,21 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   var st   = document.getElementById('fStatus');
   var self = this;
 
-  /* Loading state */
+  // Loading state
   btn.disabled = true;
   bTxt.textContent = 'Sending...';
   bIco.className = 'fas fa-spinner fa-spin';
   st.style.display = 'none';
 
+  // Prepare parameters including the recipient email address
   var params = {
-    from_name:  document.getElementById('fn').value.trim(),
-    from_email: document.getElementById('fe').value.trim(),
-    from_phone: document.getElementById('fp').value.trim() || 'Not provided',
-    message:    document.getElementById('fm').value.trim() || 'No message',
-    to_name:    'Kasun Liyanage',
-    reply_to:   document.getElementById('fe').value.trim()
+    from_name:   document.getElementById('fn').value.trim(),
+    from_email:  document.getElementById('fe').value.trim(),
+    from_phone:  document.getElementById('fp').value.trim() || 'Not provided',
+    message:     document.getElementById('fm').value.trim() || 'No message',
+    to_name:     'Kasun Liyanage',
+    to_email:    'sasindagimhana10@gmail.com',   // <-- ADDED recipient email
+    reply_to:    document.getElementById('fe').value.trim()
   };
 
   emailjs.send('service_6wvotkq', 'template_z7b9mdoac', params)
@@ -427,7 +239,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     .catch(function(err) {
       st.style.display = 'block';
       st.style.color   = '#dc2626';
-      /* Show the real error so it is easy to diagnose */
       var reason = (err && err.text) ? err.text : (err && err.message) ? err.message : JSON.stringify(err);
       st.textContent = 'Error: ' + reason;
       console.error('EmailJS error:', err);
@@ -438,6 +249,4 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
       bIco.className   = 'fas fa-arrow-right';
     });
 });
-</script>
-</body>
-</html>
+</script></body></html>
