@@ -1,665 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Kasun Liyanage | A/L Chemistry — University of Colombo | Premier Chemistry Educator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    (function(){ emailjs.init({ publicKey: "y46Ilm5av-Eh9VHiD" }); })();
-  </script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kasun Liyanage | A/L Chemistry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0a1927;line-height:1.5;scroll-behavior:smooth;overflow-x:hidden}
+:root{
+  --navy:#0a1a2f;--blue:#2c7da0;--gold:#e9b35f;--light:#eef5ff;
+  --muted:#4a5b6e;--sh-sm:0 8px 20px rgba(0,0,0,.04);
+  --sh-md:0 20px 40px -12px rgba(0,0,0,.12)
+}
+.bg-photo{position:fixed;inset:0;z-index:-2}
+.bg-photo img{width:100%;height:100%;object-fit:cover;opacity:.08}
+.bg-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.9))}
+.animated-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.cf{position:absolute;font-family:'Courier New',monospace;font-weight:700;white-space:nowrap;color:rgba(44,125,160,.18);animation:rise 24s infinite linear;user-select:none;font-size:1rem}
+@keyframes rise{0%{transform:translateY(100vh) rotate(0);opacity:0}10%{opacity:.5}90%{opacity:.5}100%{transform:translateY(-15vh) rotate(6deg);opacity:0}}
+.cf:nth-child(1){left:5%;animation-duration:26s}
+.cf:nth-child(2){left:20%;animation-duration:33s;animation-delay:-4s}
+.cf:nth-child(3){left:40%;animation-duration:29s;animation-delay:-8s;font-size:1.25rem}
+.cf:nth-child(4){left:62%;animation-duration:37s;animation-delay:-12s}
+.cf:nth-child(5){left:80%;animation-duration:27s;animation-delay:-2s}
+.cf:nth-child(6){left:12%;animation-duration:41s;animation-delay:-16s;font-size:.85rem}
+.cf:nth-child(7){left:54%;animation-duration:31s;animation-delay:-6s;font-size:1.2rem}
+.cf:nth-child(8){left:74%;animation-duration:35s;animation-delay:-10s}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #0a1927;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
+/* NAVBAR */
+.navbar{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:1320px;background:rgba(10,26,47,.7);backdrop-filter:blur(18px);border-radius:80px;padding:.8rem 1.8rem;z-index:1000;border:1px solid rgba(255,255,255,.25);box-shadow:0 8px 28px rgba(0,0,0,.1);transition:all .35s}
+.navbar.scrolled{top:8px;padding:.5rem 1.8rem;background:rgba(10,26,47,.92);border-radius:60px}
+.nav-flex{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-weight:800;font-size:1.25rem;color:#fff;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;color:rgba(255,255,255,.9);font-size:.9rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:all .25s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0}
+.hamburger span{display:block;width:23px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;inset:0;background:rgba(10,26,47,.97);backdrop-filter:blur(16px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem}
+.mob-nav.open{display:flex}
+.mob-nav a{text-decoration:none;font-size:1.7rem;font-weight:700;color:rgba(255,255,255,.9);transition:color .2s}
+.mob-nav a:hover{color:var(--gold)}
 
-    :root {
-      --bg-white: #ffffff;
-      --navy-dark: #0a1a2f;
-      --navy-mid: #0f2a3e;
-      --black-soft: #111827;
-      --light-blue: #eef5ff;
-      --accent-blue: #2c7da0;
-      --accent-gold: #e9b35f;
-      --text-dark: #1e293b;
-      --text-muted: #4a5b6e;
-      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.03);
-      --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-      --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
+/* LAYOUT */
+.container{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:5}
 
-    /* ── Background ── */
-    .bg-photo {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -2;
-      overflow: hidden;
-    }
-    .bg-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0.1;
-      filter: brightness(0.98) contrast(1.02);
-    }
-    .bg-photo::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.88) 100%);
-      pointer-events: none;
-    }
+/* HERO */
+.hero{padding:7.5rem 0 3.5rem;min-height:100vh;display:flex;align-items:center}
+.hero-grid{display:flex;align-items:center;gap:3.5rem}
+.hero-content{flex:1.1;animation:fadeUp .8s ease-out}
+.hero-badge{background:rgba(10,26,47,.85);color:#fff;display:inline-flex;align-items:center;gap:8px;padding:.42rem 1.2rem;border-radius:60px;font-size:.76rem;font-weight:600;margin-bottom:1.3rem}
+.hero-content h1{font-size:3.3rem;font-weight:800;line-height:1.2;color:var(--navy)}
+.highlight{color:var(--blue)}
+.hero-desc{font-size:1.05rem;color:var(--muted);margin:1rem 0 0;max-width:540px}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero-image{flex:.9;text-align:center;animation:fadeScale .8s ease-out}
+.hero-image img{width:320px;height:320px;object-fit:cover;border-radius:38% 62% 40% 60%/55% 45% 55% 45%;box-shadow:0 28px 50px -18px rgba(0,0,0,.28);border:5px solid rgba(255,255,250,.95);transition:transform .5s}
+.hero-image img:hover{transform:scale(1.02)}
 
-    /* ── Floating chem bg ── */
-    .animated-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .chem-float {
-      position: absolute;
-      font-family: 'Courier New', monospace;
-      font-weight: 700;
-      font-size: 1rem;
-      white-space: nowrap;
-      color: rgba(44, 125, 160, 0.2);
-      animation: floatSlow 20s infinite linear;
-      user-select: none;
-    }
-    @keyframes floatSlow {
-      0%   { transform: translateY(100vh) translateX(-10px) rotate(0deg); opacity: 0; }
-      15%  { opacity: 0.5; }
-      85%  { opacity: 0.5; }
-      100% { transform: translateY(-20vh) translateX(20px) rotate(8deg); opacity: 0; }
-    }
-    .chem-float:nth-child(1)  { left: 5%;  animation-duration: 24s; font-size: 1.2rem; }
-    .chem-float:nth-child(2)  { left: 18%; animation-duration: 32s; font-size: 1rem;  animation-delay: -3s; }
-    .chem-float:nth-child(3)  { left: 42%; animation-duration: 28s; font-size: 1.4rem; animation-delay: -7s; }
-    .chem-float:nth-child(4)  { left: 68%; animation-duration: 36s; font-size: 1rem;  animation-delay: -11s; }
-    .chem-float:nth-child(5)  { left: 82%; animation-duration: 26s; font-size: 1.1rem; animation-delay: -2s; }
-    .chem-float:nth-child(6)  { left: 12%; animation-duration: 40s; font-size: 0.9rem; animation-delay: -15s; }
-    .chem-float:nth-child(7)  { left: 55%; animation-duration: 30s; font-size: 1.3rem; animation-delay: -5s; }
-    .chem-float:nth-child(8)  { left: 75%; animation-duration: 34s; font-size: 1rem;  animation-delay: -9s; }
-    .chem-float:nth-child(9)  { left: 90%; animation-duration: 28s; font-size: 1rem;  animation-delay: -12s; }
-    .chem-float:nth-child(10) { left: 33%; animation-duration: 44s; font-size: 1.2rem; animation-delay: -18s; }
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:#fff;padding:.82rem 2rem;border-radius:48px;text-decoration:none;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:all .35s}
+.btn:hover{background:var(--blue);transform:translateY(-3px);box-shadow:0 12px 25px -10px rgba(10,26,47,.4)}
+.btn-o{background:transparent;border:1.5px solid var(--navy);color:var(--navy)}
+.btn-o:hover{background:var(--navy);color:#fff}
 
-    /* ── Navbar ── */
-    .navbar {
-      position: fixed;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 32px);
-      max-width: 1320px;
-      background: rgba(10, 26, 47, 0.65);
-      backdrop-filter: blur(18px);
-      border-radius: 80px;
-      padding: 0.85rem 1.6rem;
-      z-index: 1000;
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-    }
-    .navbar.scrolled {
-      top: 8px;
-      padding: 0.5rem 1.6rem;
-      background: rgba(10, 26, 47, 0.9);
-      backdrop-filter: blur(20px);
-      border-radius: 60px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-    }
-    .nav-flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 1.3rem;
-      letter-spacing: -0.3px;
-      color: white;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: all 0.3s;
-    }
-    .navbar.scrolled .logo { font-size: 1.1rem; }
-    .logo span { color: var(--accent-gold); }
+/* STATS */
+.stats-box{background:rgba(255,255,255,.97);border-radius:40px;padding:1.8rem;margin:1.8rem 0 3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;box-shadow:var(--sh-md);border:1px solid rgba(10,26,47,.09)}
+.cnt{text-align:center;padding:.4rem;transition:transform .3s}
+.cnt:hover{transform:translateY(-4px)}
+.cnt-ico{font-size:1.6rem;color:var(--blue);margin-bottom:.4rem}
+.cnt-num{font-size:2.6rem;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-1px}
+.cnt-lbl{font-size:.76rem;color:var(--muted);margin-top:.45rem;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
 
-    .nav-links {
-      display: flex;
-      gap: 1.6rem;
-      list-style: none;
-      flex-wrap: nowrap;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: rgba(255,255,255,0.92);
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-      padding: 0.3rem 0;
-      border-bottom: 2px solid transparent;
-      white-space: nowrap;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--accent-gold);
-      border-bottom-color: var(--accent-gold);
-    }
+/* SECTION TITLES */
+.sec-title{font-size:2rem;font-weight:700;color:var(--navy);position:relative;display:inline-block;margin-bottom:.4rem}
+.sec-title::after{content:'';position:absolute;bottom:-10px;left:0;width:58px;height:3px;background:var(--gold);border-radius:3px}
+.sec-sub{color:var(--muted);margin-top:.9rem;margin-bottom:2rem;font-size:.97rem}
 
-    /* ── Hamburger (mobile only) ── */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      flex-shrink: 0;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2.5px;
-      background: white;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+/* CARD */
+.card{background:rgba(255,255,255,.95);border-radius:40px;padding:2rem 2.2rem;box-shadow:var(--sh-sm);margin:1.8rem 0 3rem;border:1px solid rgba(10,26,47,.07);transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
 
-    /* Mobile nav drawer */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(10, 26, 47, 0.97);
-      backdrop-filter: blur(16px);
-      z-index: 999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      text-decoration: none;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.9);
-      transition: color 0.2s;
-    }
-    .mobile-nav a:hover { color: var(--accent-gold); }
+/* ABOUT */
+.about-grid{display:flex;gap:2rem;flex-wrap:wrap}
+.about-text{flex:2;min-width:0}
+.about-text p{margin-bottom:.9rem;color:#334155}
+.about-hi{flex:1;min-width:190px;background:var(--light);border-radius:26px;padding:1.4rem}
+.about-hi ul{list-style:none}
+.about-hi li{display:flex;align-items:flex-start;gap:10px;margin-bottom:.9rem;font-size:.92rem;line-height:1.45}
+.about-hi li i{margin-top:2px;flex-shrink:0;color:var(--blue)}
+.deg-badge{background:rgba(44,125,160,.12);padding:.38rem 1.1rem;border-radius:40px;display:inline-flex;gap:8px;font-weight:700;font-size:.84rem;margin:.7rem 0 .9rem;color:var(--navy)}
 
-    /* ── Layout ── */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
-      z-index: 5;
-    }
+/* CLASSES */
+.classes-wrap{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.8rem 0 3rem}
+.class-card{background:#fff;border-radius:30px;padding:1.8rem;flex:1 1 280px;box-shadow:var(--sh-sm);border:1px solid #eef2ff;transition:all .4s cubic-bezier(.2,.9,.4,1.1)}
+.class-card:hover{transform:translateY(-8px);box-shadow:var(--sh-md)}
+.class-card h3{margin:.65rem 0 .4rem;color:var(--navy)}
+.class-ctr{margin-bottom:.55rem;font-size:.93rem}
+.addr{color:var(--muted);font-size:.88rem;line-height:1.6}
+.sch{background:var(--light);padding:.38rem 1rem;border-radius:40px;display:inline-block;margin-top:.75rem;font-size:.84rem}
 
-    /* ── Hero ── */
-    .hero {
-      padding: 7rem 0 3rem;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-    .hero-grid {
-      display: flex;
-      align-items: center;
-      gap: 3.5rem;
-    }
-    .hero-content {
-      flex: 1.1;
-      animation: fadeInUp 0.8s ease-out;
-    }
-    .hero-badge {
-      background: rgba(10, 26, 47, 0.8);
-      backdrop-filter: blur(4px);
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0.45rem 1.2rem;
-      border-radius: 60px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 1.4rem;
-    }
-    .hero-content h1 {
-      font-size: 3.4rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      color: var(--navy-dark);
-    }
-    .hero-content .highlight {
-      color: var(--accent-blue);
-      position: relative;
-      display: inline-block;
-    }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin: 1rem 0 1.8rem;
-      max-width: 540px;
-    }
-    .hero-image {
-      flex: 0.9;
-      text-align: center;
-      animation: fadeInScale 0.8s ease-out;
-    }
-    .hero-image img {
-      max-width: 100%;
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 35% 65% 38% 62% / 58% 42% 58% 42%;
-      box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.25);
-      border: 5px solid rgba(255,255,245,0.95);
-      transition: transform 0.5s ease;
-    }
-    .hero-image img:hover { transform: scale(1.02); }
+/* CONTACT */
+.contact-flex{display:flex;flex-wrap:wrap;gap:2.5rem}
+.c-info,.c-form{flex:1;min-width:240px}
+.c-detail{display:flex;gap:.9rem;align-items:flex-start;margin:1.1rem 0}
+.c-detail i{width:26px;color:var(--blue);flex-shrink:0;margin-top:2px}
+.ig{margin-bottom:.9rem}
+.ig input,.ig textarea{width:100%;padding:.88rem 1.1rem;border-radius:48px;border:1px solid #e2e8f0;background:#fff;font-family:inherit;font-size:.94rem;transition:all .3s}
+.ig textarea{border-radius:18px}
+.ig input:focus,.ig textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,125,160,.1)}
 
-    /* ── Stats ── */
-    .stats-counter-box {
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(12px);
-      border-radius: 40px;
-      padding: 1.8rem;
-      margin: 1.8rem 0 3rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      box-shadow: var(--shadow-md);
-      border: 1px solid rgba(10, 26, 47, 0.1);
-    }
-    .counter-item {
-      text-align: center;
-      padding: 0.4rem;
-      transition: transform 0.3s ease;
-    }
-    .counter-item:hover { transform: translateY(-5px); }
-    .counter-number {
-      font-size: 2.6rem;
-      font-weight: 800;
-      color: var(--navy-dark);
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-    .counter-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-    .counter-icon {
-      font-size: 1.6rem;
-      color: var(--accent-blue);
-      margin-bottom: 0.5rem;
-    }
+/* FOOTER */
+footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);border-top:1px solid #eef2f6;font-size:.87rem;line-height:1.9}
+footer a{color:var(--blue);text-decoration:none}
 
-    /* ── Buttons ── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--navy-dark);
-      color: white;
-      padding: 0.85rem 2rem;
-      border-radius: 48px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.4s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-    .btn:hover {
-      background: var(--accent-blue);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 25px -10px rgba(10, 26, 47, 0.4);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid var(--navy-dark);
-      color: var(--navy-dark);
-    }
-    .btn-outline:hover { background: var(--navy-dark); color: white; }
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(38px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeScale{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
 
-    /* ── Section titles ── */
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--navy-dark);
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -10px; left: 0;
-      width: 60px; height: 3px;
-      background: var(--accent-gold);
-      border-radius: 3px;
-    }
-    .section-sub {
-      color: var(--text-muted);
-      margin-top: 0.8rem;
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
-
-    /* ── About card ── */
-    .about-card {
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-      border-radius: 40px;
-      padding: 2rem 2.2rem;
-      box-shadow: var(--shadow-sm);
-      margin: 1.8rem 0 3rem;
-      border: 1px solid rgba(10, 26, 47, 0.08);
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .about-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-    .about-grid {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .about-text { flex: 2; min-width: 0; }
-    .about-highlights {
-      flex: 1;
-      min-width: 200px;
-      background: var(--light-blue);
-      border-radius: 28px;
-      padding: 1.4rem;
-    }
-    .degree-badge {
-      background: rgba(44, 125, 160, 0.12);
-      padding: 0.4rem 1.1rem;
-      border-radius: 40px;
-      display: inline-flex;
-      gap: 8px;
-      font-weight: 700;
-      margin: 0.8rem 0;
-      font-size: 0.88rem;
-    }
-    .about-highlights ul { list-style: none; }
-    .about-highlights li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 0.9rem;
-      font-size: 0.92rem;
-      line-height: 1.4;
-    }
-    .about-highlights li i { margin-top: 2px; flex-shrink: 0; }
-
-    /* ── Class cards ── */
-    .classes-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin: 1.8rem 0;
-    }
-    .class-card {
-      background: white;
-      border-radius: 32px;
-      padding: 1.8rem;
-      flex: 1 1 280px;
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid #eef2ff;
-    }
-    .class-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md);
-    }
-    .class-card h3 {
-      margin: 0.7rem 0 0.4rem;
-      color: var(--navy-dark);
-    }
-    .class-center-name { margin-bottom: 0.6rem; }
-    .address {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    .schedule {
-      background: #eef5ff;
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      display: inline-block;
-      margin-top: 0.8rem;
-      font-size: 0.88rem;
-    }
-
-    /* ── Contact ── */
-    .contact-section {
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-      border-radius: 40px;
-      padding: 2rem 2.2rem;
-      box-shadow: var(--shadow-sm);
-      margin: 1.8rem 0 3rem;
-      border: 1px solid rgba(10, 26, 47, 0.08);
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .contact-section:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-    .contact-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-    }
-    .contact-info, .contact-form { flex: 1; min-width: 240px; }
-    .contact-detail {
-      display: flex;
-      gap: 1rem;
-      margin: 1.2rem 0;
-      align-items: flex-start;
-    }
-    .contact-detail i { width: 28px; color: var(--accent-blue); flex-shrink: 0; margin-top: 2px; }
-    .input-group { margin-bottom: 1rem; }
-    .input-group input, .input-group textarea {
-      width: 100%;
-      padding: 0.9rem 1.1rem;
-      border-radius: 48px;
-      border: 1px solid #e2e8f0;
-      background: white;
-      transition: all 0.3s;
-      font-family: inherit;
-      font-size: 0.95rem;
-    }
-    .input-group textarea { border-radius: 20px; }
-    .input-group input:focus, .input-group textarea:focus {
-      outline: none;
-      border-color: var(--accent-blue);
-      box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.1);
-    }
-
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      color: var(--text-muted);
-      border-top: 1px solid #eef2f6;
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
-    footer a { color: var(--accent-blue); text-decoration: none; }
-
-    /* ── Animations ── */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInScale {
-      from { opacity: 0; transform: scale(0.92); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-
-    /* ═══════════════════════════════════════
-       MOBILE RESPONSIVE — max-width: 768px
-    ═══════════════════════════════════════ */
-    @media (max-width: 768px) {
-
-      /* Navbar: hide links, show hamburger */
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .navbar {
-        width: calc(100% - 20px);
-        padding: 0.75rem 1.2rem;
-        top: 10px;
-        border-radius: 50px;
-      }
-      .navbar.scrolled { padding: 0.5rem 1.2rem; top: 6px; }
-      .logo { font-size: 1.1rem; }
-
-      /* Hero: stack vertically, image first on mobile */
-      .hero {
-        padding: 6.5rem 0 2.5rem;
-        min-height: auto;
-        align-items: flex-start;
-      }
-      .hero-grid {
-        flex-direction: column-reverse;
-        gap: 1.8rem;
-        align-items: center;
-      }
-      .hero-content { text-align: center; }
-      .hero-content h1 { font-size: 2rem; }
-      .hero-desc { font-size: 0.95rem; max-width: 100%; }
-      .hero-badge { font-size: 0.72rem; padding: 0.4rem 1rem; }
-      .hero-image img {
-        width: 200px;
-        height: 200px;
-      }
-      .hero-content > div { /* buttons row */
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        align-items: center;
-      }
-      .hero-content .btn { width: 100%; max-width: 280px; justify-content: center; }
-      .btn-outline { margin-left: 0 !important; }
-
-      /* Stats: 2×2 grid */
-      .stats-counter-box {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.8rem;
-        border-radius: 28px;
-        padding: 1.2rem;
-        margin: 1.2rem 0 2.5rem;
-      }
-      .counter-number { font-size: 2rem; }
-      .counter-label { font-size: 0.72rem; }
-      .counter-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
-
-      /* Section headings */
-      .section-title { font-size: 1.6rem; }
-      .section-sub { font-size: 0.9rem; }
-
-      /* About card */
-      .about-card { border-radius: 28px; padding: 1.4rem 1.2rem; }
-      .about-grid { flex-direction: column; gap: 1.4rem; }
-      .about-highlights { min-width: unset; }
-      .degree-badge { font-size: 0.78rem; padding: 0.35rem 0.9rem; }
-
-      /* Class cards: full width */
-      .classes-container { gap: 1rem; }
-      .class-card {
-        flex: 1 1 100%;
-        border-radius: 24px;
-        padding: 1.4rem;
-      }
-      .schedule { font-size: 0.82rem; }
-
-      /* Contact */
-      .contact-section { border-radius: 28px; padding: 1.4rem 1.2rem; }
-      .contact-flex { gap: 1.6rem; }
-      .contact-info, .contact-form { min-width: 100%; }
-
-      /* General container */
-      .container { padding: 0 14px; }
-    }
-
-    /* ═══════════════════════════════════════
-       SMALL PHONES — max-width: 380px
-    ═══════════════════════════════════════ */
-    @media (max-width: 380px) {
-      .hero-content h1 { font-size: 1.75rem; }
-      .logo { font-size: 0.95rem; }
-      .stats-counter-box { padding: 1rem 0.8rem; gap: 0.6rem; }
-      .counter-number { font-size: 1.7rem; }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .navbar{width:calc(100% - 18px);padding:.7rem 1.1rem;top:9px;border-radius:48px}
+  .navbar.scrolled{padding:.45rem 1.1rem;top:6px}
+  .logo{font-size:1rem}
+  .hero{padding:6rem 0 2.5rem;min-height:auto;align-items:flex-start}
+  .hero-grid{flex-direction:column-reverse;gap:1.6rem;align-items:center}
+  .hero-content{text-align:center;width:100%}
+  .hero-content h1{font-size:1.95rem}
+  .hero-desc{font-size:.93rem;max-width:100%}
+  .hero-badge{font-size:.7rem;padding:.38rem .9rem}
+  .hero-image img{width:185px;height:185px}
+  .btn-row{flex-direction:column;align-items:center;gap:.75rem}
+  .btn-row .btn{width:100%;max-width:272px;justify-content:center}
+  .stats-box{grid-template-columns:1fr 1fr;gap:.75rem;border-radius:26px;padding:1.1rem;margin:1.1rem 0 2.2rem}
+  .cnt-num{font-size:1.9rem}
+  .cnt-lbl{font-size:.7rem}
+  .cnt-ico{font-size:1.3rem}
+  .sec-title{font-size:1.55rem}
+  .card{border-radius:26px;padding:1.4rem 1.2rem}
+  .about-grid{flex-direction:column;gap:1.3rem}
+  .about-hi{min-width:unset}
+  .classes-wrap{gap:.9rem}
+  .class-card{flex:1 1 100%;border-radius:22px;padding:1.3rem}
+  .c-info,.c-form{min-width:100%;flex:1 1 100%}
+  .contact-flex{gap:1.5rem}
+  .container{padding:0 13px}
+}
+@media(max-width:380px){
+  .hero-content h1{font-size:1.65rem}
+  .logo{font-size:.88rem}
+  .cnt-num{font-size:1.6rem}
+}
+</style>
 </head>
 <body>
 
-<!-- Background photo -->
-<div class="bg-photo">
-  <img src="kasun.jpg" alt="Kasun Liyanage Background">
-</div>
-
-<!-- Floating chemistry symbols -->
+<div class="bg-photo"><img src="kasun.jpg" alt="bg"></div>
 <div class="animated-bg">
-  <div class="chem-float">H₂O • CH₄ • NH₃ • Lewis</div>
-  <div class="chem-float">C₆H₁₂O₆ • :O: • sp³d²</div>
-  <div class="chem-float">苯 • C₆H₆ • π-bond • σ-bond</div>
-  <div class="chem-float">ΔG° = -RT lnK • E°cell • Kₐ</div>
-  <div class="chem-float">CH₃COOH ⇌ H⁺ • CH₃COO⁻</div>
-  <div class="chem-float">:Cl: • Na⁺ • VSEPR • tetrahedral</div>
-  <div class="chem-float">[Fe(CN)₆]⁴⁻ • resonance</div>
-  <div class="chem-float">C₂H₅OH • H₂SO₄ • alkene</div>
-  <div class="chem-float">Lewis structure • H—C≡C—H</div>
-  <div class="chem-float">sp³ hybridization • dipole moment</div>
+  <div class="cf">H2O - CH4 - NH3 - Lewis</div>
+  <div class="cf">C6H12O6 - sp3d2</div>
+  <div class="cf">C6H6 - pi-bond - sigma-bond</div>
+  <div class="cf">delta-G = -RT lnK - Ka</div>
+  <div class="cf">CH3COOH = H+ + CH3COO-</div>
+  <div class="cf">Na+ - VSEPR - tetrahedral</div>
+  <div class="cf">[Fe(CN)6]4- - resonance</div>
+  <div class="cf">sp3 hybridization - dipole</div>
 </div>
 
-<!-- Mobile nav drawer -->
-<div class="mobile-nav" id="mobileNav">
-  <a href="#home"    onclick="closeMobileNav()">Home</a>
-  <a href="#about"   onclick="closeMobileNav()">About</a>
-  <a href="#classes" onclick="closeMobileNav()">Centers</a>
-  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+<div class="mob-nav" id="mobNav">
+  <a href="#home"    onclick="closeMob()">Home</a>
+  <a href="#about"   onclick="closeMob()">About</a>
+  <a href="#classes" onclick="closeMob()">Centers</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
 </div>
 
-<!-- Navbar -->
 <nav class="navbar" id="navbar">
   <div class="nav-flex">
     <div class="logo">Kasun Liyanage <span>| A/L Chem</span></div>
@@ -669,272 +195,234 @@
       <li><a href="#classes">Centers</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <main>
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content" data-aos="fade-up">
         <div class="hero-badge"><i class="fas fa-university"></i> University of Colombo | BSc Chemistry (Hons)</div>
         <h1>Master A/L Chemistry with <span class="highlight">Kasun Liyanage</span></h1>
-        <p class="hero-desc">Island rank-holder educator & University of Colombo graduate. Proven strategies for National Syllabus excellence — transform your potential into top results.</p>
-        <div style="margin-top: 1.8rem;">
+        <p class="hero-desc">Island rank-holder educator and University of Colombo graduate. Proven strategies for National Syllabus excellence — transform your potential into top results.</p>
+        <div class="btn-row">
           <a href="#classes" class="btn"><i class="fas fa-calendar-alt"></i> Class Schedule</a>
-          <a href="#contact" class="btn btn-outline" style="margin-left: 1rem;"><i class="fas fa-envelope"></i> Enroll Now</a>
+          <a href="#contact" class="btn btn-o"><i class="fas fa-envelope"></i> Enroll Now</a>
         </div>
       </div>
-      <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
-        <img src="kasun.jpg" alt="Mr. Kasun Liyanage - Chemistry Teacher">
+      <div class="hero-image" data-aos="fade-left" data-aos-delay="100">
+        <img src="kasun.jpg" alt="Mr. Kasun Liyanage">
       </div>
     </div>
-  </section>
-
-  <div class="container">
-
-    <!-- Stats -->
-    <div class="stats-counter-box" data-aos="fade-up" data-aos-duration="700">
-      <div class="counter-item">
-        <div class="counter-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="counter-number" id="counterAPass">0</div>
-        <div class="counter-label">A Pass Percentage</div>
-      </div>
-      <div class="counter-item">
-        <div class="counter-icon"><i class="fas fa-user-graduate"></i></div>
-        <div class="counter-number" id="counterStudents">0</div>
-        <div class="counter-label">Students Mentored</div>
-      </div>
-      <div class="counter-item">
-        <div class="counter-icon"><i class="fas fa-calendar-alt"></i></div>
-        <div class="counter-number" id="counterExp">0</div>
-        <div class="counter-label">Years of Excellence</div>
-      </div>
-      <div class="counter-item">
-        <div class="counter-icon"><i class="fas fa-medal"></i></div>
-        <div class="counter-number" id="counterRankers">0</div>
-        <div class="counter-label">District Rankers</div>
-      </div>
-    </div>
-
-    <!-- About -->
-    <section id="about">
-      <span class="section-title" data-aos="fade-right">Academic Profile</span>
-      <div class="section-sub" data-aos="fade-right" data-aos-delay="50">University of Colombo graduate | Nationally recognized educator</div>
-      <div class="about-card" data-aos="fade-up" data-aos-duration="700">
-        <div class="about-grid">
-          <div class="about-text">
-            <h3 style="color: var(--navy-dark); margin-bottom: 0.8rem;">Kasun Liyanage, BSc (Hons) Chemistry</h3>
-            <p>I graduated with honors in Chemistry from the <strong>University of Colombo</strong>, one of Sri Lanka's premier institutions. My passion for teaching led me to achieve <strong>Island Rank 07</strong> at the Sri Lanka Teachers' Service Examination, a testament to my pedagogical excellence.</p>
-            <div class="degree-badge"><i class="fas fa-certificate"></i> Island Rank 07 — Teachers' Exam | University of Colombo Alumnus</div>
-            <p>Over the past decade, I've refined a result-driven methodology focusing on concept building, past paper mastery, and personalized feedback. My students consistently achieve 'A' grades and gain admission to top universities.</p>
-          </div>
-          <div class="about-highlights">
-            <ul>
-              <li><i class="fas fa-check-circle" style="color:var(--accent-blue);"></i> Specialized in Organic & Physical Chemistry</li>
-              <li><i class="fas fa-check-circle" style="color:var(--accent-blue);"></i> Bilingual medium (Sinhala/English)</li>
-              <li><i class="fas fa-check-circle" style="color:var(--accent-blue);"></i> Weekly mock exams & feedback</li>
-              <li><i class="fas fa-check-circle" style="color:var(--accent-blue);"></i> Recorded revision library access</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Classes -->
-    <section id="classes">
-      <span class="section-title" data-aos="fade-right">Class Centers</span>
-      <div class="section-sub" data-aos="fade-right" data-aos-delay="50">Two premier locations — flexible schedules</div>
-      <div class="classes-container">
-        <div class="class-card" data-aos="fade-up" data-aos-delay="0">
-          <i class="fas fa-landmark" style="color: var(--accent-blue); font-size: 2rem;"></i>
-          <h3>Panadura Center</h3>
-          <div class="class-center-name"><strong>Samathwee Higher Education Center</strong></div>
-          <div class="address"><i class="fas fa-location-dot"></i> Sri Mahavihara road, Panadura (Kethumathi hospital road)</div>
-          <div class="schedule"><i class="far fa-clock"></i> 2026 A/L Thu | 3:00 PM – 8:30 PM</div><br>
-          <div class="schedule"><i class="far fa-clock"></i> 2027 A/L Tue | 3:00 PM – 6:30 PM</div>
-        </div>
-
-        <div class="class-card" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-city" style="color: var(--accent-blue); font-size: 2rem;"></i>
-          <h3>Horana Center</h3>
-          <div class="class-center-name"><strong>Apex Metro Institute of Science</strong></div>
-          <div class="address"><i class="fas fa-location-dot"></i> Horana City Plaza, Horana Town</div>
-          <div class="schedule"><i class="far fa-clock"></i> 2026 A/L Fri | 4:00 PM – 6:15 PM</div><br>
-          <div class="schedule"><i class="far fa-clock"></i> 2027 A/L Wed | 3:00 PM – 6:30 PM</div>
-        </div>
-
-        <div class="class-card" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-star-of-life" style="color: var(--accent-blue); font-size: 2rem;"></i>
-          <h3>Batch Features</h3>
-          <div class="address">
-            ✅ Printed module notes<br>
-            ✅ Weekly progress tests<br>
-            ✅ Individual doubt sessions<br>
-            ✅ Past paper discussion clinics
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <span class="section-title" data-aos="fade-right">Connect With Me</span>
-      <div class="section-sub" data-aos="fade-right" data-aos-delay="50">Reserve your seat or ask any question</div>
-      <div class="contact-section" data-aos="fade-up" data-aos-duration="700">
-        <div class="contact-flex">
-          <div class="contact-info">
-            <h3 style="margin-bottom: 0.5rem;"><i class="fas fa-address-card"></i> Direct Contact</h3>
-            <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+94 77 123 8901</span></div>
-            <div class="contact-detail"><i class="fas fa-envelope"></i> <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdcedcced4d3d9dcdad4d0d5dcd3dc8c8dfddad0dcd4d193ded2d0">[email&#160;protected]</a></span></div>
-            <div class="contact-detail"><i class="fab fa-whatsapp"></i> <span>+94 71 456 7890 (24h support)</span></div>
-            <div style="background:var(--light-blue); padding:1rem; border-radius:24px; margin-top:1.2rem; font-size: 0.9rem;">
-              <i class="fas fa-clock"></i> <strong>Office hours:</strong> 9:00 AM – 7:00 PM (Weekdays)
-            </div>
-          </div>
-          <div class="contact-form">
-            <h3 style="margin-bottom: 1rem;">Send Inquiry</h3>
-            <form id="contactFormFinal">
-              <div class="input-group"><input id="from_name" type="text" name="from_name" placeholder="Full Name" required></div>
-              <div class="input-group"><input id="from_email" type="email" name="from_email" placeholder="Email Address" required></div>
-              <div class="input-group"><input id="from_phone" type="tel" name="from_phone" placeholder="Phone with WhatsApp"></div>
-              <div class="input-group"><textarea id="message" name="message" rows="3" placeholder="I'm interested in Panadura / Horana center or A/L Chemistry 2026 batch..."></textarea></div>
-              <button type="submit" class="btn" id="submitBtn" style="width:100%; justify-content:center;">
-                <span id="btnText">Submit Inquiry</span>
-                <i class="fas fa-arrow-right" id="btnIcon"></i>
-              </button>
-              <div id="formStatus" style="margin-top:0.8rem; text-align:center; font-size:0.9rem; font-weight:600; display:none;"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
+</section>
 
-  <footer>
-    <p>© 2026 Kasun Liyanage — BSc (Hons) Chemistry, University of Colombo | Island Rank 07 (Teachers' Exam) | A/L Chemistry Specialist, Sri Lanka</p>
-    <p style="margin-top:0.4rem;"><i class="fas fa-atom"></i> Excellence through conceptual clarity & dedicated mentorship</p>
-    <p style="margin-top:0.4rem;">Developed by <a href="https://sg-web-solutions.vercel.app/" target="_blank">S G Web Solutions</a></p>
-  </footer>
+<div class="container">
+
+<div class="stats-box" data-aos="fade-up">
+  <div class="cnt"><div class="cnt-ico"><i class="fas fa-chart-line"></i></div><div class="cnt-num" id="cA">0</div><div class="cnt-lbl">A Pass %</div></div>
+  <div class="cnt"><div class="cnt-ico"><i class="fas fa-user-graduate"></i></div><div class="cnt-num" id="cS">0</div><div class="cnt-lbl">Students Mentored</div></div>
+  <div class="cnt"><div class="cnt-ico"><i class="fas fa-calendar-alt"></i></div><div class="cnt-num" id="cE">0</div><div class="cnt-lbl">Years Excellence</div></div>
+  <div class="cnt"><div class="cnt-ico"><i class="fas fa-medal"></i></div><div class="cnt-num" id="cR">0</div><div class="cnt-lbl">District Rankers</div></div>
+</div>
+
+<section id="about">
+  <span class="sec-title" data-aos="fade-right">Academic Profile</span>
+  <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">University of Colombo graduate &mdash; Nationally recognized educator</p>
+  <div class="card" data-aos="fade-up">
+    <div class="about-grid">
+      <div class="about-text">
+        <h3 style="color:var(--navy);margin-bottom:.75rem">Kasun Liyanage, BSc (Hons) Chemistry</h3>
+        <p>I graduated with honors in Chemistry from the <strong>University of Colombo</strong>, one of Sri Lanka's premier institutions. My passion for teaching led me to achieve <strong>Island Rank 07</strong> at the Sri Lanka Teachers' Service Examination.</p>
+        <div class="deg-badge"><i class="fas fa-certificate"></i> Island Rank 07 &mdash; Teachers' Exam | University of Colombo Alumnus</div>
+        <p>Over the past decade I have refined a result-driven methodology focusing on concept building, past paper mastery, and personalized feedback. My students consistently achieve 'A' grades and gain admission to top universities.</p>
+      </div>
+      <div class="about-hi">
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Specialized in Organic &amp; Physical Chemistry</li>
+          <li><i class="fas fa-check-circle"></i> Bilingual medium (Sinhala / English)</li>
+          <li><i class="fas fa-check-circle"></i> Weekly mock exams &amp; feedback</li>
+          <li><i class="fas fa-check-circle"></i> Recorded revision library access</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="classes">
+  <span class="sec-title" data-aos="fade-right">Class Centers</span>
+  <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">Two premier locations &mdash; flexible schedules</p>
+  <div class="classes-wrap">
+    <div class="class-card" data-aos="fade-up">
+      <i class="fas fa-landmark" style="color:var(--blue);font-size:1.9rem"></i>
+      <h3>Panadura Center</h3>
+      <div class="class-ctr"><strong>Samathwee Higher Education Center</strong></div>
+      <div class="addr"><i class="fas fa-location-dot"></i> Sri Mahavihara Road, Panadura (Kethumathi Hospital Road)</div>
+      <div class="sch"><i class="far fa-clock"></i> 2026 A/L &mdash; Thu &nbsp;3:00 PM &ndash; 8:30 PM</div><br>
+      <div class="sch"><i class="far fa-clock"></i> 2027 A/L &mdash; Tue &nbsp;3:00 PM &ndash; 6:30 PM</div>
+    </div>
+    <div class="class-card" data-aos="fade-up" data-aos-delay="80">
+      <i class="fas fa-city" style="color:var(--blue);font-size:1.9rem"></i>
+      <h3>Horana Center</h3>
+      <div class="class-ctr"><strong>Apex Metro Institute of Science</strong></div>
+      <div class="addr"><i class="fas fa-location-dot"></i> Horana City Plaza, Horana Town</div>
+      <div class="sch"><i class="far fa-clock"></i> 2026 A/L &mdash; Fri &nbsp;4:00 PM &ndash; 6:15 PM</div><br>
+      <div class="sch"><i class="far fa-clock"></i> 2027 A/L &mdash; Wed &nbsp;3:00 PM &ndash; 6:30 PM</div>
+    </div>
+    <div class="class-card" data-aos="fade-up" data-aos-delay="160">
+      <i class="fas fa-star-of-life" style="color:var(--blue);font-size:1.9rem"></i>
+      <h3>Batch Features</h3>
+      <div class="addr" style="line-height:2.1">
+        &#10003;&nbsp; Printed module notes<br>
+        &#10003;&nbsp; Weekly progress tests<br>
+        &#10003;&nbsp; Individual doubt sessions<br>
+        &#10003;&nbsp; Past paper discussion clinics
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <span class="sec-title" data-aos="fade-right">Connect With Me</span>
+  <p class="sec-sub" data-aos="fade-right" data-aos-delay="50">Reserve your seat or ask any question</p>
+  <div class="card" data-aos="fade-up">
+    <div class="contact-flex">
+      <div class="c-info">
+        <h3 style="margin-bottom:.4rem"><i class="fas fa-address-card"></i> Direct Contact</h3>
+        <div class="c-detail"><i class="fas fa-phone-alt"></i><span>+94 77 123 8901</span></div>
+        <div class="c-detail"><i class="fas fa-envelope"></i><span>sasindagimhana10 [at] gmail.com</span></div>
+        <div class="c-detail"><i class="fab fa-whatsapp"></i><span>+94 71 456 7890 (24h support)</span></div>
+        <div style="background:var(--light);padding:.9rem 1.1rem;border-radius:22px;margin-top:1.1rem;font-size:.88rem">
+          <i class="fas fa-clock"></i> <strong>Office hours:</strong> 9:00 AM &ndash; 7:00 PM (Weekdays)
+        </div>
+      </div>
+      <div class="c-form">
+        <h3 style="margin-bottom:.9rem">Send Inquiry</h3>
+        <form id="contactForm" novalidate>
+          <div class="ig"><input id="fn" type="text"  name="from_name"  placeholder="Full Name"           required></div>
+          <div class="ig"><input id="fe" type="email" name="from_email" placeholder="Email Address"       required></div>
+          <div class="ig"><input id="fp" type="tel"   name="from_phone" placeholder="Phone / WhatsApp"></div>
+          <div class="ig"><textarea id="fm" name="message" rows="3" placeholder="I am interested in Panadura / Horana center or A/L Chemistry 2026 batch..."></textarea></div>
+          <button type="submit" class="btn" id="subBtn" style="width:100%;justify-content:center">
+            <span id="bTxt">Submit Inquiry</span>
+            <i id="bIco" class="fas fa-arrow-right"></i>
+          </button>
+          <p id="fStatus" style="margin-top:.75rem;text-align:center;font-size:.88rem;font-weight:600;display:none"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer>
+  <p>&copy; 2026 Kasun Liyanage &mdash; BSc (Hons) Chemistry, University of Colombo | Island Rank 07 (Teachers' Exam) | A/L Chemistry Specialist</p>
+  <p><i class="fas fa-atom"></i> Excellence through conceptual clarity &amp; dedicated mentorship</p>
+  <p>Developed by <a href="https://sg-web-solutions.vercel.app/" target="_blank">S G Web Solutions</a></p>
+</footer>
 </main>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-out-quad' });
+AOS.init({duration:800,once:true,offset:80,easing:'ease-out-quad'});
+emailjs.init({publicKey:"y46Ilm5av-Eh9VHiD"});
 
-  /* ── Navbar scroll ── */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-
-    let scrollPos = window.scrollY + 150;
-    document.querySelectorAll('section').forEach(sec => {
-      if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
-        let id = sec.getAttribute('id');
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-        });
-      }
-    });
-  });
-
-  /* ── Hamburger / mobile nav ── */
-  const hamburger  = document.getElementById('hamburger');
-  const mobileNav  = document.getElementById('mobileNav');
-
-  hamburger.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-
-  function closeMobileNav() {
-    mobileNav.classList.remove('open');
-    hamburger.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  /* ── Animated counters ── */
-  const counters = [
-    { id: 'counterAPass',    target: 89   },
-    { id: 'counterStudents', target: 1850 },
-    { id: 'counterExp',      target: 11   },
-    { id: 'counterRankers',  target: 34   }
-  ];
-
-  function animateNumbers() {
-    counters.forEach(({ id, target }) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      let current = 0;
-      const steps = 90;
-      const inc = target / steps;
-      const timer = setInterval(() => {
-        current += inc;
-        if (current >= target) { el.textContent = target; clearInterval(timer); }
-        else el.textContent = Math.floor(current);
-      }, 20);
-    });
-  }
-
-  let counted = false;
-  const statsBox = document.querySelector('.stats-counter-box');
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting && !counted) { counted = true; animateNumbers(); }
-  }, { threshold: 0.3 }).observe(statsBox);
-
-  setTimeout(() => {
-    if (!counted && statsBox.getBoundingClientRect().top < window.innerHeight) {
-      counted = true; animateNumbers();
-    }
-  }, 1000);
-
-  /* ── Contact form — EmailJS ── */
-  document.getElementById('contactFormFinal').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const btn      = document.getElementById('submitBtn');
-    const btnText  = document.getElementById('btnText');
-    const btnIcon  = document.getElementById('btnIcon');
-    const status   = document.getElementById('formStatus');
-
-    // Loading state
-    btn.disabled   = true;
-    btnText.textContent = 'Sending…';
-    btnIcon.className   = 'fas fa-spinner fa-spin';
-    status.style.display = 'none';
-
-    const templateParams = {
-      from_name:  document.getElementById('from_name').value,
-      from_email: document.getElementById('from_email').value,
-      from_phone: document.getElementById('from_phone').value,
-      message:    document.getElementById('message').value,
-      to_email:   'sasindagimhana10@gmail.com'
-    };
-
-    emailjs.send('service_6wvotkq', 'template_esyg55v', templateParams)
-      .then(() => {
-        status.style.display = 'block';
-        status.style.color   = '#16a34a';
-        status.textContent   = '✅ Message sent! Mr. Kasun will reply shortly.';
-        this.reset();
-      })
-      .catch((err) => {
-        status.style.display = 'block';
-        status.style.color   = '#dc2626';
-        status.textContent   = '❌ Failed to send. Please call or WhatsApp directly.';
-        console.error('EmailJS error:', err);
-      })
-      .finally(() => {
-        btn.disabled        = false;
-        btnText.textContent = 'Submit Inquiry';
-        btnIcon.className   = 'fas fa-arrow-right';
+/* Navbar */
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',function(){
+  navbar.classList.toggle('scrolled',window.scrollY>40);
+  var pos=window.scrollY+160;
+  document.querySelectorAll('section').forEach(function(s){
+    if(pos>=s.offsetTop&&pos<s.offsetTop+s.offsetHeight){
+      document.querySelectorAll('.nav-links a').forEach(function(a){
+        a.classList.toggle('active',a.getAttribute('href')==='#'+s.id);
       });
+    }
   });
+});
 
-  /* ── Smooth scroll ── */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('cl
+/* Hamburger */
+var ham=document.getElementById('hamburger');
+var mob=document.getElementById('mobNav');
+ham.addEventListener('click',function(){
+  var o=mob.classList.toggle('open');
+  ham.classList.toggle('open',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+function closeMob(){
+  mob.classList.remove('open');
+  ham.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* Counters */
+var counters=[{id:'cA',t:89},{id:'cS',t:1850},{id:'cE',t:11},{id:'cR',t:34}];
+var counted=false;
+function runCounters(){
+  counters.forEach(function(c){
+    var el=document.getElementById(c.id);
+    if(!el)return;
+    var v=0,inc=c.t/90;
+    var ti=setInterval(function(){
+      v+=inc;
+      if(v>=c.t){el.textContent=c.t;clearInterval(ti);}
+      else el.textContent=Math.floor(v);
+    },20);
+  });
+}
+var sb=document.querySelector('.stats-box');
+new IntersectionObserver(function(entries){
+  if(entries[0].isIntersecting&&!counted){counted=true;runCounters();}
+},{threshold:0.25}).observe(sb);
+setTimeout(function(){
+  if(!counted&&sb.getBoundingClientRect().top<window.innerHeight){counted=true;runCounters();}
+},900);
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+/* EmailJS */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var btn=document.getElementById('subBtn');
+  var bTxt=document.getElementById('bTxt');
+  var bIco=document.getElementById('bIco');
+  var st=document.getElementById('fStatus');
+  btn.disabled=true;
+  bTxt.textContent='Sending...';
+  bIco.className='fas fa-spinner fa-spin';
+  st.style.display='none';
+  var self=this;
+  emailjs.send('service_6wvotkq','template_esyg55v',{
+    from_name:  document.getElementById('fn').value,
+    from_email: document.getElementById('fe').value,
+    from_phone: document.getElementById('fp').value,
+    message:    document.getElementById('fm').value
+  }).then(function(){
+    st.style.display='block';
+    st.style.color='#16a34a';
+    st.textContent='Message sent! Mr. Kasun will reply shortly.';
+    self.reset();
+  }).catch(function(err){
+    st.style.display='block';
+    st.style.color='#dc2626';
+    st.textContent='Failed to send. Please call or WhatsApp directly.';
+    console.error(err);
+  }).finally(function(){
+    btn.disabled=false;
+    bTxt.textContent='Submit Inquiry';
+    bIco.className='fas fa-arrow-right';
+  });
+});
+</script>
+</body>
+</html>
